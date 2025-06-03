@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CAMBIAR AQUÍ: Título de la página -->
+    <title>Nombre de la Empresa - Tu Lema o Slogan</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos Generales */
+        body {
+            padding-top: 70px; /* Altura de la barra de navegación fija + un poco de margen */
+            font-family: 'Inter', sans-serif; /* Aplicar la fuente Inter */
+            background-color: #f8f9fa; /* Un fondo global ligeramente gris para dar profundidad */
+        }
+
+        /* Sección Hero */
+        #hero {
+            min-height: 75vh; /* Altura mínima para la sección hero */
+            background-color: #4F46E5; /* Color de fondo primario de respaldo */
+            
+            /* CAMBIAR AQUÍ: URL de tu imagen de fondo o dejar el gradiente */
+            /* Ejemplo con imagen: background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x1080/333333/FFFFFF?text=Fondo+Hero'); */
+            background: linear-gradient(135deg, #6D28D9 0%, #4F46E5 100%); /* Gradiente por defecto */
+            
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex; /* Asegurar que d-flex de Bootstrap funcione bien */
+            align-items: center; /* Asegurar que align-items-center de Bootstrap funcione bien */
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        #hero h1 {
+            font-weight: 800; /* Más peso para el titular principal */
+            text-shadow: 0px 2px 4px rgba(0,0,0,0.3); /* Sombra de texto para mejor legibilidad */
+        }
+         #hero .lead {
+            text-shadow: 0px 1px 3px rgba(0,0,0,0.2); /* Sombra de texto ligera para el subtítulo */
+        }
+
+
+        /* Mejoras visuales para las tarjetas de servicios */
+        #servicios .card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: none; /* Quitar borde por defecto para un look más limpio */
+            border-radius: 0.75rem; /* Bordes más redondeados */
+        }
+
+        #servicios .card:hover {
+            transform: translateY(-10px); /* Efecto de elevación sutil */
+            box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important; /* Sombra más pronunciada al pasar el ratón */
+        }
+
+        #servicios .feature-icon-small {
+            width: 4rem;
+            height: 4rem;
+            font-size: 1.75rem; /* Ajustar tamaño del icono dentro del círculo */
+            border-radius: 0.75rem; /* Bordes redondeados para el contenedor del icono */
+        }
+        
+        #sobre-nosotros img {
+            border-radius: 0.75rem; /* Bordes redondeados para la imagen */
+        }
+
+
+        /* Estilo para los botones de redes sociales en el footer */
+        footer .btn-outline-primary {
+            border-color: #6c757d; /* Color de borde más sutil */
+            color: #6c757d; /* Color de icono más sutil */
+            transition: all 0.3s ease;
+            width: 40px; /* Asegurar tamaño consistente */
+            height: 40px; /* Asegurar tamaño consistente */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        footer .btn-outline-primary:hover {
+            background-color: #4F46E5; /* Color primario de la plantilla */
+            border-color: #4F46E5;
+            color: #fff; /* Icono blanco al pasar el ratón */
+        }
+
+        /* Ajustes generales para enlaces y botones */
+        .btn {
+            padding: 0.75rem 1.5rem; /* Padding más generoso para botones */
+            font-weight: 500;
+            border-radius: 0.5rem; /* Bordes redondeados estándar para botones */
+        }
+        .btn-lg {
+             padding: 0.85rem 1.85rem;
+             font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background-color: #4F46E5;
+            border-color: #4F46E5;
+            transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .btn-primary:hover, .btn-primary:focus {
+            background-color: #4338CA; /* Un tono más oscuro al pasar el ratón/focus */
+            border-color: #4338CA;
+            transform: translateY(-2px); /* Ligero efecto de elevación */
+        }
+        .btn-light:hover, .btn-light:focus {
+            transform: translateY(-2px);
+        }
+
+
+        .text-primary {
+            color: #4F46E5 !important;
+        }
+
+        a.nav-link {
+            font-weight: 600; /* Un poco más de peso para los enlaces de navegación */
+            transition: color 0.2s ease;
+            padding: 0.5rem 1rem; /* Padding para los items de navegación */
+        }
+        .navbar-nav .nav-link.active, .navbar-nav .nav-link:hover {
+             color: #4F46E5 !important;
+        }
+        .navbar-brand {
+            font-size: 1.75rem; /* Tamaño de fuente más grande para el logo */
+        }
+
+        /* Títulos de sección */
+        section h2.display-5 {
+            margin-bottom: 1rem; /* Espacio debajo del título de sección */
+            font-weight: 700; /* Títulos de sección más destacados */
+        }
+        section .lead, section .fs-5 {
+            margin-bottom: 2rem; /* Más espacio después de los párrafos introductorios */
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #212529; /* Un gris oscuro más profundo para el footer */
+        }
+        footer h5 {
+            color: #adb5bd; /* Color más suave para los títulos del footer */
+        }
+        footer p, footer li {
+            color: #6c757d; /* Color más suave para el texto del footer */
+        }
+        footer a.text-primary:hover {
+            text-decoration: underline;
+        }
+
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 65px; /* Ajustar padding para nav más pequeña */
+            }
+            #hero {
+                min-height: auto; /* Altura automática en móviles */
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+            #hero h1 {
+                font-size: 2.25rem; /* Reducir tamaño del titular en móviles */
+            }
+            .display-5 {
+                font-size: 2rem; /* Ajustar títulos h2 en móviles */
+            }
+            #sobre-nosotros .row, #servicios .row {
+                text-align: center; /* Centrar texto en móviles para estas secciones */
+            }
+            #sobre-nosotros img {
+                margin-bottom: 2rem; /* Espacio debajo de la imagen en móviles */
+            }
+            .navbar-nav {
+                margin-top: 0.5rem; /* Espacio para los items de navegación en modo colapsado */
+            }
+            .navbar-nav .nav-item {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ======== BARRA DE NAVEGACIÓN ======== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <!-- CAMBIAR AQUÍ: Logo de la empresa -->
+            <a class="navbar-brand fw-bold text-primary" href="#">LogoEmpresa</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#hero">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======== SECCIÓN PRINCIPAL (HERO) ======== -->
+    <section id="hero" class="d-flex align-items-center text-center">
+        <div class="container">
+            <!-- CAMBIAR AQUÍ: Titular y subtítulo -->
+            <h1 class="display-3 fw-bold text-white">El Titular Principal de Tu Empresa</h1>
+            <p class="lead text-white-75 my-4 col-lg-8 mx-auto">Una descripción breve y potente que explique qué haces y por qué eres la mejor opción.</p>
+            <a href="#contacto" class="btn btn-light btn-lg px-5 py-3 fw-bold">¡Contacta Ahora!</a>
+        </div>
+    </section>
+
+    <main class="container my-5 py-md-3">
+        <!-- ======== SOBRE NOSOTROS ======== -->
+        <section id="sobre-nosotros" class="py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-md-6">
+                    <!-- CAMBIAR AQUÍ: Imagen representativa (ej: equipo, oficina) -->
+                    <img src="https://placehold.co/600x450/E0E7FF/4F46E5?text=Imagen+Empresa" class="img-fluid shadow-lg" alt="Imagen sobre la empresa">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="display-5 fw-bold mb-3">Sobre Nuestra Empresa</h2>
+                    <!-- CAMBIAR AQUÍ: Texto sobre la empresa -->
+                    <p class="text-muted fs-5">Somos una empresa apasionada por [tu sector]. Desde [año de fundación], nuestro objetivo ha sido ofrecer soluciones de alta calidad que superen las expectativas de nuestros clientes. Creemos en [tu valor principal, ej: la innovación, la honestidad, el trabajo en equipo] y nos esforzamos cada día por demostrarlo.</p>
+                    <p class="text-muted fs-5">Nuestra misión es [tu misión]. Contamos con un equipo de profesionales expertos listos para ayudarte a alcanzar tus metas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== SERVICIOS ======== -->
+        <section id="servicios" class="py-5 my-5 bg-white rounded-3 shadow-sm">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold">Nuestros Servicios</h2>
+                    <!-- CAMBIAR AQUÍ: Texto introductorio de servicios -->
+                    <p class="text-muted fs-5 col-lg-8 mx-auto">Ofrecemos una variedad de servicios diseñados para satisfacer tus necesidades y potenciar tu negocio.</p>
+                </div>
+                <div class="row text-center g-4">
+                    <!-- CAMBIAR AQUÍ: Repetir este bloque por cada servicio -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body p-4 p-lg-5 d-flex flex-column">
+                                <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-white bg-primary bg-gradient p-3 mb-4 shadow align-self-center">
+                                    <i class="bi bi-gear-wide-connected fs-1"></i>
+                                </div>
+                                <h5 class="card-title fw-bold mt-3 mb-3 fs-4">Servicio 1</h5>
+                                <p class="card-text text-muted flex-grow-1">Descripción breve de este servicio. Explica el valor que aporta al cliente y cómo soluciona sus problemas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Servicio 2 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body p-4 p-lg-5 d-flex flex-column">
+                                 <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-white bg-primary bg-gradient p-3 mb-4 shadow align-self-center">
+                                    <i class="bi bi-bar-chart-line-fill fs-1"></i>
+                                </div>
+                                <h5 class="card-title fw-bold mt-3 mb-3 fs-4">Servicio 2</h5>
+                                <p class="card-text text-muted flex-grow-1">Descripción breve de este servicio. Explica el valor que aporta al cliente y cómo soluciona sus problemas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Servicio 3 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body p-4 p-lg-5 d-flex flex-column">
+                                <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-white bg-primary bg-gradient p-3 mb-4 shadow align-self-center">
+                                   <i class="bi bi-briefcase-fill fs-1"></i>
+                                </div>
+                                <h5 class="card-title fw-bold mt-3 mb-3 fs-4">Servicio 3</h5>
+                                <p class="card-text text-muted flex-grow-1">Descripción breve de este servicio. Explica el valor que aporta al cliente y cómo soluciona sus problemas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== LLAMADA A LA ACCIÓN (CTA) ======== -->
+        <section id="cta" class="py-5 my-5 text-center bg-primary text-white rounded-3 shadow-lg">
+             <div class="container">
+                <h2 class="fw-bold display-5">¿Listo para Empezar?</h2>
+                <!-- CAMBIAR AQUÍ: Texto de la llamada a la acción -->
+                <p class="fs-5 col-lg-8 mx-auto my-4">No esperes más para llevar tu proyecto al siguiente nivel. Ponte en contacto con nosotros hoy mismo y descubre cómo podemos ayudarte.</p>
+                <a href="#contacto" class="btn btn-light btn-lg px-5 py-3 fw-bold">Solicitar Presupuesto</a>
+             </div>
+        </section>
+    </main>
+
+    <!-- ======== PIE DE PÁGINA (FOOTER) ======== -->
+    <footer id="contacto" class="pt-5 pb-4">
+        <div class="container text-center text-md-start">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 mx-auto">
+                    <!-- CAMBIAR AQUÍ: Nombre y descripción corta en el footer -->
+                    <h5 class="text-uppercase mb-4 fw-bold text-primary">Nombre de la Empresa</h5>
+                    <p>Aquí puedes poner una breve descripción de la empresa o su misión para reforzar la marca en el pie de página.</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mx-auto">
+                    <h5 class="text-uppercase mb-4 fw-bold">Enlaces Rápidos</h5>
+                     <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#hero" class="text-decoration-none">Inicio</a></li>
+                        <li class="mb-2"><a href="#sobre-nosotros" class="text-decoration-none">Sobre Nosotros</a></li>
+                        <li class="mb-2"><a href="#servicios" class="text-decoration-none">Servicios</a></li>
+                        <li class="mb-2"><a href="#contacto" class="text-decoration-none">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mx-auto">
+                    <h5 class="text-uppercase mb-4 fw-bold">Contacto</h5>
+                    <!-- CAMBIAR AQUÍ: Datos de contacto -->
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-geo-alt-fill me-2 text-primary"></i> Tu Dirección, Ciudad, País</li>
+                        <li class="mb-2"><i class="bi bi-envelope-fill me-2 text-primary"></i> tuemail@empresa.com</li>
+                        <li class="mb-2"><i class="bi bi-telephone-fill me-2 text-primary"></i> +34 123 456 789</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mx-auto text-center text-lg-start">
+                    <h5 class="text-uppercase mb-4 fw-bold">Síguenos</h5>
+                    <!-- CAMBIAR AQUÍ: Enlaces a tus redes sociales -->
+                    <div>
+                        <a href="#" class="btn btn-outline-primary btn-floating m-1 rounded-circle" role="button" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-floating m-1 rounded-circle" role="button" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-floating m-1 rounded-circle" role="button" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-floating m-1 rounded-circle" role="button" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4 border-secondary">
+
+            <div class="text-center">
+                <!-- CAMBIAR AQUÍ: Año y nombre de la empresa para copyright -->
+                <p>&copy; <span id="currentYear"></span> Nombre de la Empresa. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        // Script para actualizar el año del copyright automáticamente
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Smooth scroll para los enlaces de navegación
+        document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Cerrar el menú de navegación en móviles antes de desplazarse
+                    const navbarToggler = document.querySelector('.navbar-toggler');
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarToggler && navbarCollapse.classList.contains('show')) {
+                        navbarToggler.click(); // Simula un clic para cerrar el menú
+                    }
+                    
+                    // Considerar la altura de la barra de navegación fija
+                    const navbarHeight = document.querySelector('.navbar.fixed-top').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                    
+                    window.scrollTo({
+         
