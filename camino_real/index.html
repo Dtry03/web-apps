@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camino Real Restaurante - Cocina Asturiana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FBF9F6;
+            color: #3a3a3a;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Lora', serif;
+        }
+        .hero-bg {
+             background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('https://placehold.co/1920x1080/5C4033/FBF9F6?text=Interior+del+Restaurante');
+             background-size: cover;
+             background-position: center;
+             background-attachment: fixed;
+        }
+        .llagar-bg {
+             background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://placehold.co/1920x800/2C1E1E/FBF9F6?text=Bodega+%2F+Llagar');
+             background-size: cover;
+             background-position: center;
+        }
+        /* Animación */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.8s ease-out, transform 0.6s ease-out;
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-[#FBF9F6]">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-4xl font-serif tracking-tight text-white md:text-stone-800" id="logo">Camino Real</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#tradicion" class="text-white md:text-stone-600 hover:text-stone-900 transition-colors duration-300 font-medium">Tradición</a>
+                <a href="#sabores" class="text-white md:text-stone-600 hover:text-stone-900 transition-colors duration-300 font-medium">Nuestros Sabores</a>
+                <a href="#llagar" class="text-white md:text-stone-600 hover:text-stone-900 transition-colors duration-300 font-medium">El Llagar</a>
+                <a href="#reservas" class="bg-stone-800 text-white hover:bg-stone-900 transition-colors duration-300 px-6 py-2 rounded-md font-semibold tracking-wide">Reservar</a>
+            </nav>
+            <div class="md:hidden">
+                 <button id="menu-btn" class="text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                 </button>
+            </div>
+        </div>
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-sm">
+             <a href="#tradicion" class="block text-center py-3 px-4 text-stone-800 hover:bg-stone-100 font-medium">Tradición</a>
+             <a href="#sabores" class="block text-center py-3 px-4 text-stone-800 hover:bg-stone-100 font-medium">Nuestros Sabores</a>
+             <a href="#llagar" class="block text-center py-3 px-4 text-stone-800 hover:bg-stone-100 font-medium">El Llagar</a>
+             <a href="#reservas" class="block text-center py-4 px-4 bg-stone-800 text-white font-semibold">Reservar</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="h-screen w-full flex items-center justify-center text-center text-white hero-bg">
+        <div class="max-w-4xl px-4 animate-on-scroll is-visible">
+            <h1 class="text-5xl md:text-7xl font-serif">El Sabor de Asturias, <br> Generación Tras Generación</h1>
+            <p class="mt-6 text-lg md:text-xl font-light max-w-2xl mx-auto">Cocina tradicional asturiana elaborada con el mejor producto de nuestra tierra y el cariño de siempre.</p>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 lg:px-12">
+
+        <!-- Sección Tradición -->
+        <section id="tradicion" class="py-20 md:py-32 grid md:grid-cols-5 gap-16 items-center animate-on-scroll">
+            <div class="md:col-span-2">
+                <img src="https://placehold.co/600x750/8D6E63/ffffff?text=Fachada+de+Piedra+y+Madera" alt="Fachada del restaurante Camino Real" class="rounded-lg shadow-2xl w-full h-auto object-cover">
+            </div>
+            <div class="md:col-span-3">
+                <h2 class="text-4xl md:text-5xl font-serif text-stone-800 mb-6">Nuestra Casa, Su Mesa</h2>
+                <p class="text-lg text-stone-700 mb-4 leading-relaxed">
+                    Desde hace más de treinta años, Camino Real es un referente de la gastronomía asturiana. Somos un negocio familiar, donde la pasión por la cocina y el respeto por nuestras raíces se transmiten en cada plato.
+                </p>
+                <p class="text-lg text-stone-700 leading-relaxed">
+                    Nuestra filosofía es sencilla: seleccionar la mejor materia prima del campo y el mar Cantábrico para llevar a su mesa el sabor auténtico de Asturias. Bienvenidos a nuestra casa.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección Nuestros Sabores -->
+        <section id="sabores" class="py-20 md:py-28 border-t border-stone-200">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-serif text-stone-800 mb-4">Nuestros Sabores</h2>
+                <p class="max-w-3xl mx-auto text-lg text-stone-700 leading-relaxed">Platos contundentes, guisos lentos y postres caseros. Un viaje por la geografía gastronómica de Asturias.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Plato 1 -->
+                <div class="text-center animate-on-scroll">
+                    <img src="https://placehold.co/500x500/A1887F/ffffff?text=Fabada+Asturiana" alt="Fabada Asturiana" class="rounded-full aspect-square object-cover w-48 mx-auto shadow-xl mb-5 border-4 border-white">
+                    <h3 class="text-2xl font-serif">Fabada Asturiana</h3>
+                    <p class="text-stone-600">Con su compango de matanza.</p>
+                </div>
+                <!-- Plato 2 -->
+                <div class="text-center animate-on-scroll" style="transition-delay: 150ms;">
+                    <img src="https://placehold.co/500x500/795548/ffffff?text=Cachopo" alt="Cachopo" class="rounded-full aspect-square object-cover w-48 mx-auto shadow-xl mb-5 border-4 border-white">
+                    <h3 class="text-2xl font-serif">Cachopo de Ternera</h3>
+                    <p class="text-stone-600">Relleno de jamón y queso.</p>
+                </div>
+                <!-- Plato 3 -->
+                <div class="text-center animate-on-scroll" style="transition-delay: 300ms;">
+                     <img src="https://placehold.co/500x500/607D8B/ffffff?text=Pescado+del+D%C3%ADa" alt="Pescado del Día" class="rounded-full aspect-square object-cover w-48 mx-auto shadow-xl mb-5 border-4 border-white">
+                    <h3 class="text-2xl font-serif">Pescados del Cantábrico</h3>
+                    <p class="text-stone-600">Según mercado, a la plancha o al horno.</p>
+                </div>
+                <!-- Plato 4 -->
+                <div class="text-center animate-on-scroll" style="transition-delay: 450ms;">
+                    <img src="https://placehold.co/500x500/FFC107/ffffff?text=Arroz+con+Leche" alt="Arroz con Leche" class="rounded-full aspect-square object-cover w-48 mx-auto shadow-xl mb-5 border-4 border-white">
+                    <h3 class="text-2xl font-serif">Arroz con Leche</h3>
+                    <p class="text-stone-600">Requetemado con azúcar.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Llagar / Bodega -->
+        <section id="llagar" class="py-24 md:py-32 my-20 llagar-bg animate-on-scroll">
+            <div class="text-center max-w-3xl mx-auto px-6 text-white">
+                <h2 class="text-4xl md:text-5xl font-serif mb-6">El Llagar</h2>
+                <p class="text-xl leading-relaxed">
+                    Nuestra bodega es el corazón de la celebración. Un espacio donde maduran los mejores vinos y descansa nuestra sidra. El maridaje perfecto para una comida memorable, donde cada botella cuenta una historia de nuestra tierra.
+                </p>
+                 <a href="#reservas" class="mt-8 inline-block bg-white text-stone-800 font-bold hover:bg-stone-200 transition-colors duration-300 px-10 py-3 rounded-md">
+                    Organice su Evento
+                </a>
+            </div>
+        </section>
+
+
+        <!-- Sección Contacto y Reservas -->
+        <section id="reservas" class="py-20 md:py-28 animate-on-scroll">
+            <div class="text-center mb-16">
+                 <h2 class="text-4xl md:text-5xl font-serif text-stone-800 mb-4">Contacto y Reservas</h2>
+                 <p class="max-w-2xl mx-auto text-lg text-stone-700">Llámenos para reservar su mesa. Estaremos encantados de recibirle.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+                <div>
+                     <img src="https://placehold.co/600x400/D7CCC8/3E2723?text=Mapa+de+Ubicaci%C3%B3n" alt="Mapa de ubicación del restaurante" class="w-full h-full object-cover rounded-lg shadow-lg">
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-xl">
+                    <h3 class="text-2xl font-serif mb-4">Información</h3>
+                    <p class="text-lg text-stone-700 mb-2"><strong class="font-semibold">Dirección:</strong> Selorio, 33316, Villaviciosa, Asturias</p>
+                    <p class="text-lg text-stone-700 mb-2"><strong class="font-semibold">Teléfono:</strong> 985 87 61 51</p>
+                    <p class="text-lg text-stone-700 mb-6"><strong class="font-semibold">Horario:</strong> Abierto todos los días para comidas y cenas.</p>
+                     <a href="tel:985876151" class="w-full text-center inline-block bg-stone-800 text-white hover:bg-stone-900 transition-colors duration-300 px-10 py-4 rounded-md font-bold tracking-wide text-lg">
+                        Llamar Ahora
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-800 text-stone-300">
+        <div class="container mx-auto px-6 py-10 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.instagram.com/caminorealrest" target="_blank" class="text-stone-300 hover:text-white transition-colors duration-300">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.153 2.153c.247.636.398 1.363.445 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.047 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.153 2.153c-.636.247-1.363.398-2.427.445-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.153-2.153c-.247-.636-.398-1.363-.445-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.047-1.064.218-1.791.465-2.427a4.902 4.902 0 012.153-2.153c.636-.247 1.363.398 2.427.445 1.024-.048 1.378.06 3.808-.06zM12 0C9.525 0 9.148.01 8.042.059c-1.11.05-1.897.227-2.612.503a6.897 6.897 0 00-2.583 2.583c-.276.715-.453-1.502-.503 2.612C2.01 9.148 2 9.525 2 12s.01 2.852.059 3.958c.05 1.11.227 1.897.503 2.612a6.897 6.897 0 002.583 2.583c.715.276 1.502.453 2.612.503C9.148 21.99 9.525 22 12 22s2.852-.01 3.958-.059c1.11-.05 1.897-.227 2.612-.503a6.897 6.897 0 002.583-2.583c.276-.715.453-1.502.503-2.612.049-1.106.059-1.483.059-3.958s-.01-2.852-.059-3.958c-.05-1.11-.227-1.897-.503-2.612a6.897 6.897 0 00-2.583-2.583c-.715-.276-1.502-.453-2.612-.503C14.852 2.01 14.475 2 12 2h.001zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+            <p class="text-stone-400 text-sm">&copy; 2024 Camino Real Restaurante. Pura cocina asturiana.</p>
+        </div>
+    </footer>
+
+
+<script>
+    // Script para menú móvil
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Script para cambiar el header al hacer scroll
+    const header = document.getElementById('header');
+    const logo = document.getElementById('logo');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('bg-[#FBF9F6]', 'shadow-lg');
+            logo.classList.remove('text-white');
+            logo.classList.add('text-stone-800');
+            menuBtn.classList.remove('text-white');
+            menuBtn.classList.add('text-stone-800');
+            header.querySelectorAll('nav a').forEach(a => {
+                if (!a.matches('.bg-stone-800')) {
+                   a.classList.remove('text-white');
+                   a.classList.add('md:text-stone-600');
+                }
+            });
+        } else {
+            header.classList.remove('bg-[#FBF9F6]', 'shadow-lg');
+            logo.classList.add('text-white');
+            logo.classList.remove('text-stone-800');
+            menuBtn.classList.add('text-white');
+            menuBtn.classList.remove('text-stone-800');
+             header.querySelectorAll('nav a').forEach(a => {
+                 if (!a.matches('.bg-stone-800')) {
+                    a.classList.add('text-white');
+                    a.classList.remove('md:text-stone-600');
+                 }
+            });
+        }
+    });
+
+    // Script para animaciones de entrada al hacer scroll
+    const sections = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                entry.target.style.animation = `fadeInUp 1s ease-out forwards`;
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>
