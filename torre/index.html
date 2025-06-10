@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante La Torre de Almanza - Cocina Leonesa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6d2828; /* Un rojo vino oscuro, señorial */
+            --stone: #f0ebe5; /* Color piedra claro */
+            --dark-text: #2a2a2a;
+            --wood: #4d3830;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--stone);
+            color: var(--dark-text);
+        }
+        h1, h2, h3, .font-display {
+            font-family: 'Cinzel', serif;
+        }
+        .hero-bg {
+             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1920x1080/5a4e46/fff?text=La+Torre+de+Almanza');
+             background-size: cover;
+             background-position: center;
+        }
+        .bg-primary { background-color: var(--primary); }
+        .text-primary { color: var(--primary); }
+        .border-primary { border-color: var(--primary); }
+        .bg-wood { background-color: var(--wood); }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+        .btn-primary:hover {
+            background-color: #521e1e;
+            border-color: #521e1e;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 1s ease-out, transform 0.7s ease-out;
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-stone">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-display text-white md:text-wood" id="logo">La Torre</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#historia" class="text-white md:text-gray-700 hover:text-primary transition-colors duration-300 font-bold">Historia</a>
+                <a href="#cocina" class="text-white md:text-gray-700 hover:text-primary transition-colors duration-300 font-bold">Nuestra Cocina</a>
+                <a href="#salones" class="text-white md:text-gray-700 hover:text-primary transition-colors duration-300 font-bold">Salones</a>
+                <a href="#contacto" class="btn-primary px-6 py-2 rounded-sm font-bold shadow-md">Reservar</a>
+            </nav>
+            <div class="md:hidden">
+                 <button id="menu-btn" class="text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                 </button>
+            </div>
+        </div>
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-stone/98 backdrop-blur-sm">
+            <a href="#historia" class="block text-center py-3 px-4 text-primary hover:bg-gray-200 font-bold">Historia</a>
+            <a href="#cocina" class="block text-center py-3 px-4 text-primary hover:bg-gray-200 font-bold">Nuestra Cocina</a>
+            <a href="#salones" class="block text-center py-3 px-4 text-primary hover:bg-gray-200 font-bold">Salones</a>
+            <a href="#contacto" class="block text-center py-4 px-4 bg-primary text-white font-bold">Reservar</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="h-screen w-full flex items-center justify-center text-center text-white hero-bg">
+        <div class="max-w-4xl px-4 animate-on-scroll is-visible">
+            <h1 class="text-5xl md:text-7xl font-display">El Sabor de la Historia</h1>
+            <p class="mt-6 text-lg md:text-xl font-light">Cocina tradicional leonesa en un monumento del siglo XV. <br>Una experiencia para los sentidos.</p>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 lg:px-12">
+
+        <!-- Sección Historia -->
+        <section id="historia" class="py-20 md:py-32 grid md:grid-cols-2 gap-16 items-center animate-on-scroll">
+            <div>
+                <h2 class="text-4xl md:text-5xl font-display text-primary mb-6">La Torre de Almanza</h2>
+                <p class="text-lg text-gray-700 mb-4 leading-relaxed">
+                   Nuestro restaurante se alza en el interior de una torre-fortaleza del siglo XV, un monumento que ha sido testigo de la historia de Almanza. Cada piedra de sus muros cuenta una historia.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                   Hemos restaurado este espacio con el máximo respeto para crear un ambiente único, donde la robustez de la historia se une a la calidez de nuestra hospitalidad para ofrecerle una comida memorable.
+                </p>
+            </div>
+            <div>
+                <img src="https://placehold.co/600x750/8a7a6d/ffffff?text=Interior+de+Piedra" alt="Interior de piedra del Restaurante La Torre" class="rounded-lg shadow-2xl w-full h-auto object-cover">
+            </div>
+        </section>
+
+        <!-- Sección La Cocina -->
+        <section id="cocina" class="py-20 md:py-28 border-t border-gray-200">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-display text-primary mb-4">La Cocina de la Tierra</h2>
+                <p class="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed">Nuestra carta es un homenaje a la rica gastronomía de León. Platos contundentes, elaborados sin prisa y con el mejor producto local.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Plato 1 -->
+                <div class="text-center animate-on-scroll">
+                    <img src="https://placehold.co/500x500/a1887f/ffffff?text=Cocido+Montañés" alt="Cocido Montañés" class="rounded-lg shadow-xl w-full h-auto object-cover mb-4">
+                    <h3 class="text-2xl font-display">Cocido Montañés</h3>
+                    <p class="text-gray-600">Nuestro plato estrella, servido en tres vuelcos.</p>
+                </div>
+                <!-- Plato 2 -->
+                <div class="text-center animate-on-scroll" style="transition-delay: 200ms;">
+                    <img src="https://placehold.co/500x500/795548/ffffff?text=Carnes+a+la+Parrilla" alt="Carnes a la parrilla" class="rounded-lg shadow-xl w-full h-auto object-cover mb-4">
+                    <h3 class="text-2xl font-display">Carnes Rojas</h3>
+                    <p class="text-gray-600">Chuletón de buey y ternera de la montaña.</p>
+                </div>
+                <!-- Plato 3 -->
+                <div class="text-center animate-on-scroll" style="transition-delay: 400ms;">
+                     <img src="https://placehold.co/500x500/d7ccc8/333?text=Postres+Caseros" alt="Postres Caseros" class="rounded-lg shadow-xl w-full h-auto object-cover mb-4">
+                    <h3 class="text-2xl font-display">Postres Caseros</h3>
+                    <p class="text-gray-600">El broche de oro a una comida perfecta.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Salones -->
+        <section id="salones" class="py-24 my-20 bg-wood text-white animate-on-scroll">
+            <div class="text-center max-w-4xl mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-display mb-6">Salones con Historia</h2>
+                <p class="text-xl text-gray-200 leading-relaxed">
+                   Disponemos de diferentes salones privados, perfectos para sus celebraciones familiares, comidas de empresa o cualquier evento especial. Disfrute de la intimidad y el encanto de un entorno único.
+                </p>
+                 <a href="#contacto" class="mt-8 inline-block bg-white text-wood font-bold hover:bg-gray-200 transition-colors duration-300 px-10 py-3 rounded-sm">
+                    Organice su Evento
+                </a>
+            </div>
+        </section>
+
+        <!-- Sección Contacto y Reservas -->
+        <section id="contacto" class="py-20 md:py-28 animate-on-scroll">
+            <div class="text-center mb-16">
+                 <h2 class="text-4xl md:text-5xl font-display text-primary mb-4">Encuéntrenos en Almanza</h2>
+                 <p class="max-w-2xl mx-auto text-lg text-gray-700">Le recomendamos reservar con antelación para asegurar su mesa en La Torre.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+                <div class="w-full h-96">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.743778550186!2d-5.059885884554897!3d42.68822097916603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd475630653d9e3b%3A0x6b4129759c381c00!2sRestaurante%20la%20Torre!5e0!3m2!1ses!2ses!4v1683886568341!5m2!1ses!2ses" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow-xl"></iframe>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-2xl border-t-4 border-primary">
+                    <h3 class="text-2xl font-display mb-4">Información y Reservas</h3>
+                    <p class="text-lg text-gray-700 mb-2"><strong class="font-semibold">Dirección:</strong> Calle la Torre, 20, 24170 Almanza, León</p>
+                    <p class="text-lg text-gray-700 mb-6"><strong class="font-semibold">Teléfono:</strong> 987 71 00 50</p>
+                     <a href="tel:987710050" class="w-full text-center inline-block btn-primary px-10 py-4 rounded-sm font-bold tracking-wide text-lg shadow-lg">
+                        Llamar para Reservar
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-wood text-stone-200">
+        <div class="container mx-auto px-6 py-10 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.instagram.com/restaurante_latorre_almanza" target="_blank" class="text-stone-200 hover:text-white transition-colors duration-300">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.153 2.153c.247.636.398 1.363.445 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.047 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.153 2.153c-.636.247-1.363.398-2.427.445-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.153-2.153c-.247-.636-.398-1.363-.445-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.047-1.064.218-1.791.465-2.427a4.902 4.902 0 012.153-2.153c.636-.247 1.363.398 2.427.445 1.024-.048 1.378.06 3.808-.06zM12 0C9.525 0 9.148.01 8.042.059c-1.11.05-1.897.227-2.612.503a6.897 6.897 0 00-2.583 2.583c-.276.715-.453-1.502-.503 2.612C2.01 9.148 2 9.525 2 12s.01 2.852.059 3.958c.05 1.11.227 1.897.503 2.612a6.897 6.897 0 002.583 2.583c.715.276 1.502.453 2.612.503C9.148 21.99 9.525 22 12 22s2.852-.01 3.958-.059c1.11-.05 1.897-.227 2.612-.503a6.897 6.897 0 002.583-2.583c.276-.715.453-1.502-.503-2.612.049-1.106.059-1.483.059-3.958s-.01-2.852-.059-3.958c-.05-1.11-.227-1.897-.503-2.612a6.897 6.897 0 00-2.583-2.583c-.715-.276-1.502-.453-2.612-.503C14.852 2.01 14.475 2 12 2h.001zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+            <p class="text-sm text-stone-300">&copy; 2024 Restaurante La Torre. Cocina con historia en Almanza.</p>
+        </div>
+    </footer>
+
+
+<script>
+    // Script para menú móvil
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Script para cambiar el header al hacer scroll
+    const header = document.getElementById('header');
+    const logo = document.getElementById('logo');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('bg-stone', 'shadow-md');
+            logo.classList.remove('text-white');
+            logo.classList.add('text-wood');
+            menuBtn.classList.remove('text-white');
+            menuBtn.classList.add('text-wood');
+            header.querySelectorAll('nav a').forEach(a => {
+                if (!a.classList.contains('btn-primary')) {
+                   a.classList.remove('text-white');
+                   a.classList.add('md:text-gray-700');
+                }
+            });
+        } else {
+            header.classList.remove('bg-stone', 'shadow-md');
+            logo.classList.add('text-white');
+            logo.classList.remove('text-wood');
+            menuBtn.classList.add('text-white');
+            menuBtn.classList.remove('text-wood');
+             header.querySelectorAll('nav a').forEach(a => {
+                 if (!a.classList.contains('btn-primary')) {
+                    a.classList.add('text-white');
+                    a.classList.remove('md:text-gray-700');
+                 }
+            });
+        }
+    });
+
+    // Script para animaciones de entrada al hacer scroll
+    const sections = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                entry.target.style.animation = `fadeIn 1s ease-out forwards`;
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>
