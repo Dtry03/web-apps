@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Restaurante La Piscina - Hospital de Órbigo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0077b6; /* Un azul piscina */
+            --accent-yellow: #ffb703; /* Un amarillo sol */
+            --light-bg: #f8f9fa; 
+            --dark-text: #212529;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+        }
+        h1, h2, h3 {
+            font-weight: 800;
+        }
+        .font-display {
+             font-weight: 800;
+             text-transform: uppercase;
+        }
+        .hero-bg {
+             background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://placehold.co/1920x1080/0077b6/fff?text=¡Chapuzón!');
+             background-size: cover;
+             background-position: center;
+        }
+        .bg-primary { background-color: var(--primary-blue); }
+        .text-primary { color: var(--primary-blue); }
+        .bg-accent { background-color: var(--accent-yellow); }
+        .text-accent { color: var(--accent-yellow); }
+        
+        .btn-accent {
+            background-color: var(--accent-yellow);
+            color: var(--dark-text);
+            transition: all 0.3s ease;
+        }
+        .btn-accent:hover {
+            background-color: #fca311;
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 1s ease-out, transform 0.7s ease-out;
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-light-bg">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl md:text-3xl font-display text-white md:text-primary" id="logo">La Piscina HDO</a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#carta" class="text-white md:text-gray-700 hover:text-primary transition-colors duration-300 font-semibold">Para Picar</a>
+                <a href="#ambiente" class="text-white md:text-gray-700 hover:text-primary transition-colors duration-300 font-semibold">Ambiente</a>
+                <a href="#contacto" class="btn-accent px-6 py-2 rounded-full font-bold shadow-md text-sm">LLÁMANOS</a>
+            </nav>
+            <div class="md:hidden">
+                 <button id="menu-btn" class="text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                 </button>
+            </div>
+        </div>
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-light-bg/98 backdrop-blur-sm">
+            <a href="#carta" class="block text-center py-3 px-4 text-primary hover:bg-gray-200 font-semibold">Para Picar</a>
+            <a href="#ambiente" class="block text-center py-3 px-4 text-primary hover:bg-gray-200 font-semibold">Ambiente</a>
+            <a href="#contacto" class="block text-center py-4 px-4 bg-accent text-dark-text font-bold">LLÁMANOS</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="h-[85vh] md:h-screen w-full flex items-center justify-center text-center text-white hero-bg">
+        <div class="max-w-4xl px-4 animate-on-scroll is-visible">
+            <h1 class="text-5xl md:text-8xl font-display">Tu Verano, Nuestro Bar</h1>
+            <p class="mt-4 text-lg md:text-2xl font-light">El mejor plan para refrescarse y disfrutar en Hospital de Órbigo. <br>¡Te esperamos!</p>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 lg:px-12">
+
+        <!-- Sección Carta -->
+        <section id="carta" class="py-20 md:py-32">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl text-primary mb-4 font-display">¡A COMER!</h2>
+                <p class="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">Hamburguesas, raciones, bocadillos... Tenemos todo lo que te apetece después de un buen chapuzón.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Raciones -->
+                <div class="bg-white p-6 shadow-xl rounded-lg text-center animate-on-scroll">
+                    <img src="https://placehold.co/500x400/0077b6/fff?text=Raciones" alt="Raciones variadas" class="w-full h-56 object-cover mb-5 rounded-md">
+                    <h3 class="text-2xl font-display text-primary">Raciones para Compartir</h3>
+                    <p class="text-gray-600 mt-2">Calamares, patatas bravas, croquetas... ¡El picoteo perfecto!</p>
+                </div>
+                <!-- Hamburguesas -->
+                <div class="bg-white p-6 shadow-xl rounded-lg text-center animate-on-scroll" style="transition-delay: 200ms;">
+                    <img src="https://placehold.co/500x400/ffb703/000?text=Burgers" alt="Hamburguesas" class="w-full h-56 object-cover mb-5 rounded-md">
+                    <h3 class="text-2xl font-display text-primary">Hamburguesas y Bocatas</h3>
+                    <p class="text-gray-600 mt-2">Nuestras burgers caseras y bocadillos para reponer fuerzas.</p>
+                </div>
+                <!-- Helados -->
+                <div class="bg-white p-6 shadow-xl rounded-lg text-center animate-on-scroll" style="transition-delay: 400ms;">
+                     <img src="https://placehold.co/500x400/caf0f8/000?text=Helados" alt="Helados y postres" class="w-full h-56 object-cover mb-5 rounded-md">
+                    <h3 class="text-2xl font-display text-primary">Helados y Bebidas</h3>
+                    <p class="text-gray-600 mt-2">El toque dulce y refrescante para un día de sol perfecto.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección Ambiente -->
+        <section id="ambiente" class="py-24 my-20 bg-primary text-white animate-on-scroll rounded-lg">
+            <div class="text-center max-w-3xl mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-display mb-6">¡El Mejor Ambiente del Verano!</h2>
+                <p class="text-xl text-blue-100 leading-relaxed">
+                   Nuestra terraza es el corazón de la piscina. Un lugar para relajarse con amigos y familia, tomar el sol, disfrutar de una bebida fría y olvidarse de las preocupaciones.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección Contacto y Reservas -->
+        <section id="contacto" class="py-20 md:py-28 animate-on-scroll">
+            <div class="text-center mb-16">
+                 <h2 class="text-4xl md:text-5xl font-display text-primary mb-4">¡Pásate a Vernos!</h2>
+                 <p class="max-w-2xl mx-auto text-lg text-gray-600">Estamos en la piscina municipal de Hospital de Órbigo. Llámanos para preguntar o reservar para grupos.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+                <div class="w-full h-96">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5961.428781498066!2d-5.918991823393043!3d42.45524273295556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd37639556a35017%3A0x63345a34e8f7a957!2sPiscinas%20Municipales%20de%20Hospital%20de%20Orbigo!5e0!3m2!1ses!2ses!4v1683891485603!5m2!1ses!2ses" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow-xl"></iframe>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-2xl border-t-4 border-accent">
+                    <h3 class="text-2xl font-display text-center mb-4">Contacto</h3>
+                    <p class="text-lg text-gray-700 text-center mb-1"><strong class="font-semibold">Ubicación:</strong> Piscinas Municipales, Hospital de Órbigo, León</p>
+                    <div class="mt-6">
+                        <h4 class="font-bold text-center text-primary mb-2">Teléfonos de Contacto:</h4>
+                        <a href="tel:638904032" class="block w-full text-center btn-accent px-10 py-3 rounded-lg font-bold tracking-wide text-lg mb-3">
+                           Llamar: 638 90 40 32
+                        </a>
+                        <a href="tel:625451818" class="block w-full text-center btn-accent px-10 py-3 rounded-lg font-bold tracking-wide text-lg">
+                           Llamar: 625 45 18 18
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-text text-gray-400">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.instagram.com/barrestaurantelapiscinahdo" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.153 2.153c.247.636.398 1.363.445 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.047 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.153 2.153c-.636.247-1.363.398-2.427.445-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.153-2.153c-.247-.636-.398-1.363-.445-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.047-1.064.218-1.791.465-2.427a4.902 4.902 0 012.153-2.153c.636-.247 1.363.398 2.427.445 1.024-.048 1.378.06 3.808-.06zM12 0C9.525 0 9.148.01 8.042.059c-1.11.05-1.897.227-2.612.503a6.897 6.897 0 00-2.583 2.583c-.276.715-.453-1.502-.503 2.612C2.01 9.148 2 9.525 2 12s.01 2.852.059 3.958c.05 1.11.227 1.897.503 2.612a6.897 6.897 0 002.583 2.583c.715.276 1.502.453 2.612.503C9.148 21.99 9.525 22 12 22s2.852-.01 3.958-.059c1.11-.05 1.897-.227 2.612-.503a6.897 6.897 0 002.583-2.583c.276-.715.453-1.502-.503-2.612.049-1.106.059-1.483.059-3.958s-.01-2.852-.059-3.958c-.05-1.11-.227-1.897-.503-2.612a6.897 6.897 0 00-2.583-2.583c-.715-.276-1.502-.453-2.612-.503C14.852 2.01 14.475 2 12 2h.001zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+            <p class="text-sm">&copy; 2024 Bar Restaurante La Piscina HDO. El sabor del verano.</p>
+        </div>
+    </footer>
+
+<script>
+    // Script para menú móvil
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Script para cambiar el header al hacer scroll
+    const header = document.getElementById('header');
+    const logo = document.getElementById('logo');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('bg-light-bg', 'shadow-sm');
+            logo.classList.remove('text-white');
+            logo.classList.add('text-primary');
+            menuBtn.classList.remove('text-white');
+            menuBtn.classList.add('text-primary');
+            header.querySelectorAll('nav a').forEach(a => {
+                if (!a.classList.contains('btn-accent')) {
+                   a.classList.remove('text-white');
+                   a.classList.add('md:text-gray-700');
+                }
+            });
+        } else {
+            header.classList.remove('bg-light-bg', 'shadow-sm');
+            logo.classList.add('text-white');
+            logo.classList.remove('text-primary');
+            menuBtn.classList.add('text-white');
+            menuBtn.classList.remove('text-primary');
+             header.querySelectorAll('nav a').forEach(a => {
+                 if (!a.classList.contains('btn-accent')) {
+                    a.classList.add('text-white');
+                    a.classList.remove('md:text-gray-700');
+                 }
+            });
+        }
+    });
+
+    // Script para animaciones de entrada al hacer scroll
+    const sections = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                entry.target.style.animation = `fadeIn 1s ease-out forwards`;
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>
