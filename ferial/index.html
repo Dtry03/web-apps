@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Restaurante El Ferial - Cocina Casera en Cistierna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #a1332a; /* Rojo vino */
+            --secondary-bg: #f8f4f0; /* Blanco roto */
+            --dark-text: #3a332d;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--secondary-bg);
+            color: var(--dark-text);
+        }
+        h1, h2, h3, .font-display {
+            font-family: 'Roboto Slab', serif;
+        }
+        .hero-bg {
+             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1920x1080/6d4c41/fff?text=Platos+Combinados');
+             background-size: cover;
+             background-position: center;
+        }
+        .bg-primary { background-color: var(--primary); }
+        .text-primary { color: var(--primary); }
+        .border-primary { border-color: var(--primary); }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #802821;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 1s ease-out, transform 0.7s ease-out;
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-secondary-bg">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-display text-white md:text-primary" id="logo">El Ferial</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#cocina" class="text-white md:text-gray-700 hover:text-primary transition-colors duration-300 font-semibold">Nuestra Cocina</a>
+                <a href="#menu-del-dia" class="text-white md:text-gray-700 hover:text-primary transition-colors duration-300 font-semibold">Menú del Día</a>
+                <a href="#contacto" class="btn-primary px-6 py-2 rounded-md font-bold shadow-sm">Llamar y Reservar</a>
+            </nav>
+            <div class="md:hidden">
+                 <button id="menu-btn" class="text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                 </button>
+            </div>
+        </div>
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-secondary-bg/98 backdrop-blur-sm">
+            <a href="#cocina" class="block text-center py-3 px-4 text-primary hover:bg-gray-200 font-semibold">Nuestra Cocina</a>
+            <a href="#menu-del-dia" class="block text-center py-3 px-4 text-primary hover:bg-gray-200 font-semibold">Menú del Día</a>
+            <a href="#contacto" class="block text-center py-4 px-4 bg-primary text-white font-bold">Llamar y Reservar</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="h-[80vh] w-full flex items-center justify-center text-center text-white hero-bg">
+        <div class="max-w-4xl px-4 animate-on-scroll is-visible">
+            <h1 class="text-5xl md:text-7xl font-display">La Cocina de Siempre, Como en Casa</h1>
+            <p class="mt-6 text-lg md:text-xl font-light">Comida casera, raciones generosas y menú del día en el corazón de Cistierna.</p>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 lg:px-12">
+
+        <!-- Sección Nuestra Cocina -->
+        <section id="cocina" class="py-20 md:py-28">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-display text-primary mb-4">Para Todos los Gustos</h2>
+                <p class="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed">Desde un buen plato combinado hasta unas raciones para compartir. Aquí se viene a comer bien.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Raciones -->
+                <div class="bg-white p-6 shadow-lg rounded-lg text-center animate-on-scroll">
+                    <img src="https://placehold.co/500x400/c7a58b/3a332d?text=Calamares+y+Croquetas" alt="Raciones variadas" class="w-full h-56 object-cover mb-5 rounded-md">
+                    <h3 class="text-2xl font-display text-primary">Raciones para Compartir</h3>
+                    <p class="text-gray-600 mt-2">Calamares, croquetas, patatas bravas... ¡Lo difícil es elegir!</p>
+                </div>
+                <!-- Platos Combinados -->
+                <div class="bg-white p-6 shadow-lg rounded-lg text-center animate-on-scroll" style="transition-delay: 200ms;">
+                    <img src="https://placehold.co/500x400/bcaaa4/3a332d?text=Lomo+con+Patatas" alt="Plato combinado" class="w-full h-56 object-cover mb-5 rounded-md">
+                    <h3 class="text-2xl font-display text-primary">Platos Combinados</h3>
+                    <p class="text-gray-600 mt-2">La solución perfecta. Lomo, huevos, ensalada, patatas... ¡Completísimos!</p>
+                </div>
+                <!-- Bocadillos -->
+                <div class="bg-white p-6 shadow-lg rounded-lg text-center animate-on-scroll" style="transition-delay: 400ms;">
+                     <img src="https://placehold.co/500x400/d7ccc8/3a332d?text=Bocadillo+de+Tortilla" alt="Bocadillo" class="w-full h-56 object-cover mb-5 rounded-md">
+                    <h3 class="text-2xl font-display text-primary">Bocadillos y Sándwiches</h3>
+                    <p class="text-gray-600 mt-2">Para una comida rápida pero llena de sabor. Pregunta por el de la casa.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección Menú del Día -->
+        <section id="menu-del-dia" class="py-24 my-20 bg-white shadow-xl animate-on-scroll rounded-lg">
+            <div class="text-center max-w-3xl mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-display text-primary mb-6">Nuestro Menú del Día</h2>
+                <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                   Cada día preparamos un menú casero, variado y económico. La mejor opción para comer bien de lunes a viernes.
+                </p>
+                <div class="border-2 border-dashed border-primary p-6 rounded-lg text-left">
+                    <h3 class="text-2xl font-display text-center mb-4">MENÚ DE HOY</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Primeros a elegir:</h4>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li>Lentejas estofadas</li>
+                                <li>Ensalada mixta</li>
+                                <li>Macarrones con chorizo</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Segundos a elegir:</h4>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li>Bistec a la plancha con patatas</li>
+                                <li>Merluza a la romana</li>
+                                <li>Huevos fritos con jamón</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <p class="text-center font-bold mt-6">Incluye pan, bebida y postre o café.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto y Reservas -->
+        <section id="contacto" class="py-20 md:py-28 animate-on-scroll">
+            <div class="text-center mb-16">
+                 <h2 class="text-4xl md:text-5xl font-display text-primary mb-4">Estamos en Cistierna</h2>
+                 <p class="max-w-2xl mx-auto text-lg text-gray-700">Pásate a vernos o llama para reservar tu mesa. ¡Te esperamos!</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+                <div class="w-full h-96">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2956.126581898734!2d-5.127885884550106!3d42.8028309791593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd475bc37829987b%3A0x705c754d92415d86!2sBar%20Restaurante%20El%20Ferial!5e0!3m2!1ses!2ses!4v1683888365111!5m2!1ses!2ses" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow-xl"></iframe>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-2xl border-t-4 border-primary">
+                    <h3 class="text-2xl font-display mb-4">Información de Contacto</h3>
+                    <p class="text-lg text-gray-700 mb-2"><strong class="font-semibold">Dirección:</strong> Calle el Ferial, 2, 24800 Cistierna, León</p>
+                    <p class="text-lg text-gray-700 mb-6"><strong class="font-semibold">Teléfono:</strong> 987 70 00 13</p>
+                     <a href="tel:987700013" class="w-full text-center inline-block btn-primary px-10 py-4 rounded-lg font-bold tracking-wide text-lg">
+                        Llamar para Reservar
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-text text-gray-400">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.instagram.com/bar_restaurante_el_ferial" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.153 2.153c.247.636.398 1.363.445 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.047 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.153 2.153c-.636.247-1.363.398-2.427.445-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.153-2.153c-.247-.636-.398-1.363-.445-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.047-1.064.218-1.791.465-2.427a4.902 4.902 0 012.153-2.153c.636-.247 1.363.398 2.427.445 1.024-.048 1.378.06 3.808-.06zM12 0C9.525 0 9.148.01 8.042.059c-1.11.05-1.897.227-2.612.503a6.897 6.897 0 00-2.583 2.583c-.276.715-.453-1.502-.503 2.612C2.01 9.148 2 9.525 2 12s.01 2.852.059 3.958c.05 1.11.227 1.897.503 2.612a6.897 6.897 0 002.583 2.583c.715.276 1.502.453 2.612.503C9.148 21.99 9.525 22 12 22s2.852-.01 3.958-.059c1.11-.05 1.897-.227 2.612-.503a6.897 6.897 0 002.583-2.583c.276-.715.453-1.502-.503-2.612.049-1.106.059-1.483.059-3.958s-.01-2.852-.059-3.958c-.05-1.11-.227-1.897-.503-2.612a6.897 6.897 0 00-2.583-2.583c-.715-.276-1.502-.453-2.612-.503C14.852 2.01 14.475 2 12 2h.001zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+            <p class="text-sm">&copy; 2024 Bar Restaurante El Ferial. Comida casera en Cistierna.</p>
+        </div>
+    </footer>
+
+<script>
+    // Script para menú móvil
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Script para cambiar el header al hacer scroll
+    const header = document.getElementById('header');
+    const logo = document.getElementById('logo');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('bg-secondary-bg', 'shadow-sm');
+            logo.classList.remove('text-white');
+            logo.classList.add('text-primary');
+            menuBtn.classList.remove('text-white');
+            menuBtn.classList.add('text-primary');
+            header.querySelectorAll('nav a').forEach(a => {
+                if (!a.classList.contains('btn-primary')) {
+                   a.classList.remove('text-white');
+                   a.classList.add('md:text-gray-700');
+                }
+            });
+        } else {
+            header.classList.remove('bg-secondary-bg', 'shadow-sm');
+            logo.classList.add('text-white');
+            logo.classList.remove('text-primary');
+            menuBtn.classList.add('text-white');
+            menuBtn.classList.remove('text-primary');
+             header.querySelectorAll('nav a').forEach(a => {
+                 if (!a.classList.contains('btn-primary')) {
+                    a.classList.add('text-white');
+                    a.classList.remove('md:text-gray-700');
+                 }
+            });
+        }
+    });
+
+    // Script para animaciones de entrada al hacer scroll
+    const sections = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                entry.target.style.animation = `fadeIn 1s ease-out forwards`;
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>
