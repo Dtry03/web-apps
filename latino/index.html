@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latino Asador Restaurante - Desde 1989</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #8c2d19; /* Rojo teja oscuro */
+            --warm-bg: #f7f2ec; /* Un beige muy cálido */
+            --dark-text: #3f322a;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--warm-bg);
+            color: var(--dark-text);
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-bg {
+             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1920x1080/6d4c41/fff?text=Lechazo+Asado');
+             background-size: cover;
+             background-position: center;
+        }
+        .bg-primary { background-color: var(--primary-red); }
+        .text-primary { color: var(--primary-red); }
+        .border-primary { border-color: var(--primary-red); }
+        
+        .btn-primary {
+            background-color: var(--primary-red);
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+        }
+        .btn-primary:hover {
+            background-color: #732414;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 1s ease-out, transform 0.7s ease-out;
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-warm-bg">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-serif text-white md:text-primary" id="logo">Latino Asador</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#historia" class="text-white md:text-gray-700 hover:text-primary transition-colors duration-300 font-semibold">Nuestra Historia</a>
+                <a href="#asador" class="text-white md:text-gray-700 hover:text-primary transition-colors duration-300 font-semibold">El Asador</a>
+                <a href="#contacto" class="btn-primary px-6 py-2 rounded-md font-bold shadow-md text-sm">RESERVAR</a>
+            </nav>
+            <div class="md:hidden">
+                 <button id="menu-btn" class="text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                 </button>
+            </div>
+        </div>
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-warm-bg/98 backdrop-blur-sm">
+            <a href="#historia" class="block text-center py-3 px-4 text-primary hover:bg-gray-200 font-semibold">Nuestra Historia</a>
+            <a href="#asador" class="block text-center py-3 px-4 text-primary hover:bg-gray-200 font-semibold">El Asador</a>
+            <a href="#contacto" class="block text-center py-4 px-4 bg-primary text-white font-bold">RESERVAR</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="h-screen w-full flex items-center justify-center text-center text-white hero-bg">
+        <div class="max-w-4xl px-4 animate-on-scroll is-visible">
+            <h1 class="text-5xl md:text-7xl font-serif">Más de 30 Años Asando para Ti</h1>
+            <p class="mt-6 text-lg md:text-xl font-light">Desde 1989, el sabor de la tradición en el corazón de León.</p>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 lg:px-12">
+
+        <!-- Sección Historia -->
+        <section id="historia" class="py-20 md:py-32 grid md:grid-cols-2 gap-16 items-center animate-on-scroll">
+            <div>
+                <h2 class="text-4xl md:text-5xl font-serif text-primary mb-6">Un Legado Familiar</h2>
+                <p class="text-lg text-gray-700 mb-4 leading-relaxed">
+                   Latino Asador es más que un restaurante, es nuestra casa. Fundado en 1989, llevamos más de tres décadas compartiendo nuestra pasión por la cocina castellana y el arte del buen asado.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                   Generación tras generación, hemos mantenido la misma filosofía: producto de primera, recetas de toda la vida y un trato familiar para que cada visita sea especial.
+                </p>
+            </div>
+             <div>
+                <img src="https://placehold.co/600x700/e0dcd7/8c2d19?text=Plaza+San+Martín" alt="Fachada del restaurante Latino Asador en la Plaza San Martín" class="w-full h-auto object-cover shadow-2xl rounded-lg">
+            </div>
+        </section>
+
+        <!-- Sección Asador -->
+        <section id="asador" class="py-20 md:py-28 border-t border-gray-200">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-serif text-primary mb-4">Maestros del Horno de Leña</h2>
+                <p class="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed">El secreto de nuestros asados está en la paciencia y en el fuego. Cordero lechal y cochinillo asados lentamente en nuestro horno de leña hasta conseguir una piel crujiente y una carne increíblemente tierna.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Cochinillo -->
+                <div class="text-center animate-on-scroll">
+                    <img src="https://placehold.co/600x400/d7ccc8/3f322a?text=Cochinillo+al+horno" alt="Cochinillo asado" class="rounded-lg shadow-xl w-full h-auto object-cover mb-4">
+                    <h3 class="text-3xl font-serif">Cochinillo Asado</h3>
+                    <p class="text-gray-600 px-4">Un clásico que nunca falla. Tostado, jugoso y lleno de sabor.</p>
+                </div>
+                <!-- Cordero -->
+                <div class="text-center animate-on-scroll" style="transition-delay: 200ms;">
+                    <img src="https://placehold.co/600x400/8d6e63/ffffff?text=Cordero+lechal+asado" alt="Cordero lechal asado" class="rounded-lg shadow-xl w-full h-auto object-cover mb-4">
+                    <h3 class="text-3xl font-serif">Cordero Lechal</h3>
+                    <p class="text-gray-600 px-4">Asado al estilo tradicional, un manjar tierno y sabroso.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección Contacto y Reservas -->
+        <section id="contacto" class="py-24 my-20 bg-white shadow-xl animate-on-scroll rounded-lg">
+            <div class="text-center max-w-3xl mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-serif text-primary mb-6">Reserve su Mesa</h2>
+                <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                   Le esperamos en la histórica Plaza de San Martín. Llámenos para asegurar su mesa y disfrutar de la auténtica cocina castellana.
+                </p>
+                <a href="tel:987498271" class="inline-block btn-primary px-12 py-4 text-xl font-bold tracking-wide rounded-lg shadow-lg">
+                    LLAMAR: 987 49 82 71
+                </a>
+                <div class="mt-8">
+                    <h3 class="font-semibold text-gray-500 mb-2">Nos encontrará en:</h3>
+                    <p class="text-lg text-dark-text">Plaza San Martín 10, León</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-text text-gray-300">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.instagram.com/latino_restaurante_" target="_blank" class="text-gray-300 hover:text-white transition-colors duration-300">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.153 2.153c.247.636.398 1.363.445 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.047 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.153 2.153c-.636.247-1.363.398-2.427.445-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.153-2.153c-.247-.636-.398-1.363-.445-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.047-1.064.218-1.791.465-2.427a4.902 4.902 0 012.153-2.153c.636-.247 1.363.398 2.427.445 1.024-.048 1.378.06 3.808-.06zM12 0C9.525 0 9.148.01 8.042.059c-1.11.05-1.897.227-2.612.503a6.897 6.897 0 00-2.583 2.583c-.276.715-.453-1.502-.503 2.612C2.01 9.148 2 9.525 2 12s.01 2.852.059 3.958c.05 1.11.227 1.897.503 2.612a6.897 6.897 0 002.583 2.583c.715.276 1.502.453 2.612.503C9.148 21.99 9.525 22 12 22s2.852-.01 3.958-.059c1.11-.05 1.897-.227 2.612-.503a6.897 6.897 0 002.583-2.583c.276-.715.453-1.502-.503-2.612.049-1.106.059-1.483.059-3.958s-.01-2.852-.059-3.958c-.05-1.11-.227-1.897-.503-2.612a6.897 6.897 0 00-2.583-2.583c-.715-.276-1.502-.453-2.612-.503C14.852 2.01 14.475 2 12 2h.001zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+            <p class="text-sm">&copy; 2024 Latino Asador Restaurante. Desde 1989.</p>
+        </div>
+    </footer>
+
+<script>
+    // Script para menú móvil
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Script para cambiar el header al hacer scroll
+    const header = document.getElementById('header');
+    const logo = document.getElementById('logo');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('bg-warm-bg', 'shadow-sm');
+            logo.classList.remove('text-white');
+            logo.classList.add('text-primary');
+            menuBtn.classList.remove('text-white');
+            menuBtn.classList.add('text-primary');
+            header.querySelectorAll('nav a').forEach(a => {
+                if (!a.classList.contains('btn-primary')) {
+                   a.classList.remove('text-white');
+                   a.classList.add('md:text-gray-700');
+                }
+            });
+        } else {
+            header.classList.remove('bg-warm-bg', 'shadow-sm');
+            logo.classList.add('text-white');
+            logo.classList.remove('text-primary');
+            menuBtn.classList.add('text-white');
+            menuBtn.classList.remove('text-primary');
+             header.querySelectorAll('nav a').forEach(a => {
+                 if (!a.classList.contains('btn-primary')) {
+                    a.classList.add('text-white');
+                    a.classList.remove('md:text-gray-700');
+                 }
+            });
+        }
+    });
+
+    // Script para animaciones de entrada al hacer scroll
+    const sections = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                entry.target.style.animation = `fadeIn 1s ease-out forwards`;
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>
