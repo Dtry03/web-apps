@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Encanto Bar Restaurante - Cocina con Alma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@700&family=Karla:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-bg: #1a1a1a;
+            --gold: #D4AF37;
+            --text-light: #f1f1f1;
+            --text-dark: #333;
+        }
+        body {
+            font-family: 'Karla', sans-serif;
+            background-color: #fdfdfd;
+            color: var(--text-dark);
+        }
+        h1, h2, h3, .font-display {
+            font-family: 'Cormorant Upright', serif;
+            letter-spacing: 1px;
+        }
+        .hero-bg {
+             background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x1080/1a1a1a/fff?text=Interior+de+El+Encanto');
+             background-size: cover;
+             background-position: center;
+        }
+        .bg-dark { background-color: var(--dark-bg); }
+        .text-gold { color: var(--gold); }
+        .border-gold { border-color: var(--gold); }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--dark-bg);
+            transition: all 0.3s ease;
+        }
+        .btn-gold:hover {
+            background-color: #c09e2e;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 1s ease-out, transform 0.7s ease-out;
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-[#fdfdfd]">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-4xl font-display text-white md:text-gray-800" id="logo">El Encanto</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#encanto" class="text-white md:text-gray-600 hover:text-gold transition-colors duration-300 font-semibold">Nuestro Encanto</a>
+                <a href="#carta" class="text-white md:text-gray-600 hover:text-gold transition-colors duration-300 font-semibold">La Carta</a>
+                <a href="#contacto" class="text-white md:text-gray-600 hover:text-gold transition-colors duration-300 font-semibold">Contacto</a>
+                <a href="#contacto" class="btn-gold px-6 py-2 rounded-full font-bold shadow-lg">Reservar</a>
+            </nav>
+            <div class="md:hidden">
+                 <button id="menu-btn" class="text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                 </button>
+            </div>
+        </div>
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/98 backdrop-blur-sm">
+            <a href="#encanto" class="block text-center py-3 px-4 text-gray-800 hover:bg-gray-100 font-semibold">Nuestro Encanto</a>
+            <a href="#carta" class="block text-center py-3 px-4 text-gray-800 hover:bg-gray-100 font-semibold">La Carta</a>
+            <a href="#contacto" class="block text-center py-3 px-4 text-gray-800 hover:bg-gray-100 font-semibold">Contacto</a>
+            <a href="#contacto" class="block text-center py-4 px-4 bg-gold text-dark-bg font-bold">Reservar</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="h-[85vh] md:h-screen w-full flex items-center justify-center text-center text-white hero-bg">
+        <div class="max-w-4xl px-4 animate-on-scroll is-visible">
+            <h1 class="text-6xl md:text-8xl font-display">Descubre el Encanto</h1>
+            <p class="mt-4 text-lg md:text-2xl font-light">Un espacio donde la cocina tradicional y el buen ambiente se encuentran.</p>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 lg:px-12">
+
+        <!-- Sección Nuestro Encanto -->
+        <section id="encanto" class="py-20 md:py-32 grid md:grid-cols-5 gap-12 items-center animate-on-scroll">
+            <div class="md:col-span-3">
+                <h2 class="text-4xl md:text-5xl font-display text-gray-800 mb-6">Cocina con Alma, <br>Ambiente con Magia</h2>
+                <p class="text-lg text-gray-600 mb-4 leading-relaxed">
+                   "El Encanto" nace de la ilusión por crear un lugar único en León. Un rincón donde cada detalle cuenta y cada plato se elabora con el máximo mimo.
+                </p>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                   Nuestra propuesta es una cocina de mercado, honesta y llena de sabor, perfecta para compartir en un ambiente relajado y acogedor. Somos tu lugar para los pequeños y grandes momentos.
+                </p>
+            </div>
+            <div class="md:col-span-2">
+                <img src="https://placehold.co/600x750/333/fff?text=Plato+estrella" alt="Plato estrella de El Encanto" class="rounded-lg shadow-2xl w-full h-auto object-cover">
+            </div>
+        </section>
+
+        <!-- Sección Carta -->
+        <section id="carta" class="py-20 md:py-28 border-t border-gray-200">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-display text-gray-800 mb-4">Un Bocado de Encanto</h2>
+                <p class="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">Desde el picoteo informal hasta nuestros platos más elaborados. Sabores para todos los gustos.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <!-- Plato 1 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg animate-on-scroll">
+                    <img src="https://placehold.co/600x800/607d8b/ffffff?text=Zamburiñas" alt="Zamburiñas" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+                        <h3 class="text-white text-xl font-display">Zamburiñas a la plancha</h3>
+                    </div>
+                </div>
+                <!-- Plato 2 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg animate-on-scroll" style="transition-delay: 150ms;">
+                    <img src="https://placehold.co/600x800/d35400/ffffff?text=Tacos" alt="Tacos" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                     <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+                        <h3 class="text-white text-xl font-display">Tacos de cochinita</h3>
+                    </div>
+                </div>
+                <!-- Plato 3 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg animate-on-scroll" style="transition-delay: 300ms;">
+                    <img src="https://placehold.co/600x800/8e44ad/ffffff?text=Hamburguesa" alt="Hamburguesa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                     <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+                        <h3 class="text-white text-xl font-display">Burger Gourmet</h3>
+                    </div>
+                </div>
+                 <!-- Plato 4 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg animate-on-scroll" style="transition-delay: 450ms;">
+                    <img src="https://placehold.co/600x800/c0392b/ffffff?text=Tataki+de+Atún" alt="Tataki de Atún" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                     <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+                        <h3 class="text-white text-xl font-display">Tataki de Atún Rojo</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Cita / Eventos -->
+        <section class="py-24 my-20 bg-dark text-white animate-on-scroll">
+            <div class="text-center max-w-4xl mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-display text-gold mb-6">Celebra en El Encanto</h2>
+                <p class="text-xl text-gray-300 leading-relaxed">
+                   ¿Tienes algo que celebrar? Nuestro espacio es perfecto para eventos privados, cenas de grupo o cualquier ocasión especial. Contáctanos y crearemos un momento mágico para ti y los tuyos.
+                </p>
+                 <a href="#contacto" class="mt-8 inline-block btn-gold px-10 py-3 rounded-full font-bold text-lg">
+                    Infórmate Aquí
+                </a>
+            </div>
+        </section>
+
+        <!-- Sección Contacto y Reservas -->
+        <section id="contacto" class="py-20 md:py-28 animate-on-scroll">
+            <div class="text-center mb-16">
+                 <h2 class="text-4xl md:text-5xl font-display text-gray-800 mb-4">Te Esperamos</h2>
+                 <p class="max-w-2xl mx-auto text-lg text-gray-600">Encuéntranos en Trobajo del Cerecedo. Llámanos para reservar tu mesa.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+                <div class="w-full h-96">
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2983.834161184715!2d-5.61208968456784!3d42.5804349791724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd378a5b28755555%3A0x2a188f5a11bb08e!2sAv.%20de%20los%20Antibi%C3%B3ticos%2C%20133%2C%2024009%20Le%C3%B3n!5e0!3m2!1ses!2ses!4v1683882004456!5m2!1ses!2ses" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow-xl"></iframe>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-2xl border-t-4 border-gold">
+                    <h3 class="text-2xl font-display mb-4">Información y Reservas</h3>
+                    <p class="text-lg text-gray-700 mb-2"><strong class="font-semibold">Dirección:</strong> Avenida de los Antibióticos, 133, 24009 Trobajo del Cerecedo, León</p>
+                    <p class="text-lg text-gray-700 mb-6"><strong class="font-semibold">Teléfono:</strong> 648 10 36 33</p>
+                     <a href="tel:648103633" class="w-full text-center inline-block btn-gold px-10 py-4 rounded-full font-bold tracking-wide text-xl shadow-lg">
+                        Llamar para Reservar
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-400">
+        <div class="container mx-auto px-6 py-10 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.instagram.com/el_encanto_bar_restaurante" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.153 2.153c.247.636.398 1.363.445 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.047 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.153 2.153c-.636.247-1.363.398-2.427.445-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.153-2.153c-.247-.636-.398-1.363-.445-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.047-1.064.218-1.791.465-2.427a4.902 4.902 0 012.153-2.153c.636-.247 1.363.398 2.427.445 1.024-.048 1.378.06 3.808-.06zM12 0C9.525 0 9.148.01 8.042.059c-1.11.05-1.897.227-2.612.503a6.897 6.897 0 00-2.583 2.583c-.276.715-.453-1.502-.503 2.612C2.01 9.148 2 9.525 2 12s.01 2.852.059 3.958c.05 1.11.227 1.897.503 2.612a6.897 6.897 0 002.583 2.583c.715.276 1.502.453 2.612.503C9.148 21.99 9.525 22 12 22s2.852-.01 3.958-.059c1.11-.05 1.897-.227 2.612-.503a6.897 6.897 0 002.583-2.583c.276-.715.453-1.502.503-2.612.049-1.106.059-1.483.059-3.958s-.01-2.852-.059-3.958c-.05-1.11-.227-1.897-.503-2.612a6.897 6.897 0 00-2.583-2.583c-.715-.276-1.502-.453-2.612-.503C14.852 2.01 14.475 2 12 2h.001zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+            <p class="text-sm">&copy; 2024 El Encanto Bar Restaurante. Creado con magia.</p>
+        </div>
+    </footer>
+
+
+<script>
+    // Script para menú móvil
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Script para cambiar el header al hacer scroll
+    const header = document.getElementById('header');
+    const logo = document.getElementById('logo');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('bg-white', 'shadow-md');
+            logo.classList.remove('text-white');
+            logo.classList.add('text-gray-800');
+            menuBtn.classList.remove('text-white');
+            menuBtn.classList.add('text-gray-800');
+            header.querySelectorAll('nav a').forEach(a => {
+                if (!a.classList.contains('btn-gold')) {
+                   a.classList.remove('text-white');
+                   a.classList.add('md:text-gray-600');
+                }
+            });
+        } else {
+            header.classList.remove('bg-white', 'shadow-md');
+            logo.classList.add('text-white');
+            logo.classList.remove('text-gray-800');
+            menuBtn.classList.add('text-white');
+            menuBtn.classList.remove('text-gray-800');
+             header.querySelectorAll('nav a').forEach(a => {
+                 if (!a.classList.contains('btn-gold')) {
+                    a.classList.add('text-white');
+                    a.classList.remove('md:text-gray-600');
+                 }
+            });
+        }
+    });
+
+    // Script para animaciones de entrada al hacer scroll
+    const sections = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                entry.target.style.animation = `fadeIn 1s ease-out forwards`;
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>
