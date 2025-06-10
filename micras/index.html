@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micras - Pintura y Decoración</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #005f73; /* Un azul/verde azulado sofisticado */
+            --light-bg: #f8f9fa; 
+            --accent: #ee9b00; /* Un naranja/mostaza vibrante */
+            --dark-text: #212529;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+        }
+        h1, h2, h3, .font-display {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .hero-bg {
+             background-color: #e9ecef;
+             background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('https://placehold.co/1920x1080/e9ecef/adb5bd?text=Textura+Pared');
+             background-size: cover;
+             background-position: center;
+        }
+        .bg-primary { background-color: var(--primary-blue); }
+        .text-primary { color: var(--primary-blue); }
+        .bg-accent { background-color: var(--accent); }
+        .text-accent { color: var(--accent); }
+        
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #004b5a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-service:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 1s ease-out, transform 0.7s ease-out;
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-light-bg">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-display text-primary" id="logo">Micras</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#servicios" class="text-gray-600 hover:text-primary transition-colors duration-300 font-semibold">Servicios</a>
+                <a href="#profesionales" class="text-gray-600 hover:text-primary transition-colors duration-300 font-semibold">Profesionales</a>
+                <a href="#inspiracion" class="text-gray-600 hover:text-primary transition-colors duration-300 font-semibold">Inspiración</a>
+                <a href="#contacto" class="btn-primary px-6 py-2 rounded-full font-bold text-sm">CONTACTO</a>
+            </nav>
+            <div class="md:hidden">
+                 <button id="menu-btn" class="text-primary focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                 </button>
+            </div>
+        </div>
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-light-bg/98">
+            <a href="#servicios" class="block text-center py-3 px-4 text-primary hover:bg-gray-200 font-semibold">Servicios</a>
+            <a href="#profesionales" class="block text-center py-3 px-4 text-primary hover:bg-gray-200 font-semibold">Profesionales</a>
+            <a href="#inspiracion" class="block text-center py-3 px-4 text-primary hover:bg-gray-200 font-semibold">Inspiración</a>
+            <a href="#contacto" class="block text-center py-4 px-4 bg-primary text-white font-bold">CONTACTO</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 md:pt-48 md:pb-32 w-full flex items-center justify-center text-center hero-bg">
+        <div class="max-w-4xl px-4 animate-on-scroll is-visible">
+            <h1 class="text-5xl md:text-7xl font-display text-primary">El Color Transforma Tu Mundo</h1>
+            <p class="mt-6 text-lg md:text-xl font-light text-dark-text max-w-2xl mx-auto">Venta de pintura, papel decorativo y todo el asesoramiento que necesitas para dar vida a tus ideas.</p>
+             <a href="#servicios" class="mt-8 inline-block btn-primary px-10 py-3 rounded-full font-bold shadow-lg">Descubre Nuestros Servicios</a>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 lg:px-12">
+
+        <!-- Sección Servicios -->
+        <section id="servicios" class="py-20 md:py-32">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-display text-primary mb-4">Todo lo que Necesitas para Decorar</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Venta de pintura -->
+                <div class="bg-white p-8 shadow-lg rounded-lg text-center border-b-4 border-transparent transition-all duration-300 card-service animate-on-scroll">
+                    <img src="https://placehold.co/500x400/005f73/ffffff?text=Colores+al+Instante" alt="Botes de pintura" class="w-full h-56 object-cover mb-5 rounded-md">
+                    <h3 class="text-2xl font-display">Venta de Pintura</h3>
+                    <p class="text-gray-600 mt-2">Te creamos cualquier color al instante. La mejor calidad para un acabado perfecto.</p>
+                </div>
+                <!-- Papel Decorativo -->
+                <div class="bg-white p-8 shadow-lg rounded-lg text-center border-b-4 border-transparent transition-all duration-300 card-service animate-on-scroll" style="transition-delay: 200ms;">
+                    <img src="https://placehold.co/500x400/0a9396/ffffff?text=Papel+Decorativo" alt="Muestras de papel decorativo" class="w-full h-56 object-cover mb-5 rounded-md">
+                    <h3 class="text-2xl font-display">Papel Decorativo</h3>
+                    <p class="text-gray-600 mt-2">Las últimas tendencias y los diseños más exclusivos para transformar tus paredes.</p>
+                </div>
+                <!-- Asesoramiento -->
+                <div class="bg-white p-8 shadow-lg rounded-lg text-center border-b-4 border-transparent transition-all duration-300 card-service animate-on-scroll" style="transition-delay: 400ms;">
+                     <img src="https://placehold.co/500x400/ee9b00/ffffff?text=Asesoramiento" alt="Persona asesorando a un cliente" class="w-full h-56 object-cover mb-5 rounded-md">
+                    <h3 class="text-2xl font-display">Asesoramiento Experto</h3>
+                    <p class="text-gray-600 mt-2">Te ayudamos a elegir los materiales y te damos los mejores consejos de aplicación.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección Profesionales -->
+        <section id="profesionales" class="py-24 my-20 bg-primary text-white animate-on-scroll rounded-lg">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                 <div class="p-8 md:p-12">
+                     <h2 class="text-4xl font-display text-white mb-4">¿Eres Profesional?</h2>
+                     <p class="text-lg text-blue-100 leading-relaxed">
+                        En Micras somos el mejor aliado para pintores y aplicadores. Ofrecemos productos de alto rendimiento, precios especiales y un servicio rápido y eficaz para que tus proyectos sean un éxito.
+                    </p>
+                     <a href="#contacto" class="mt-6 inline-block bg-accent text-dark-text font-bold px-8 py-3 rounded-full text-sm">Contacta con nosotros</a>
+                </div>
+                <div class="h-80 md:h-full w-full">
+                     <img src="https://placehold.co/800x600/004b5a/f8f9fa?text=Profesionales+y+Aplicadores" alt="Profesional de la pintura trabajando" class="w-full h-full object-cover md:rounded-r-lg">
+                </div>
+            </div>
+        </section>
+
+         <!-- Sección Inspiración -->
+        <section id="inspiracion" class="py-20 md:py-28">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-display text-primary mb-4">Inspírate con Nosotros</h2>
+                <p class="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed">Una imagen vale más que mil palabras. Descubre lo que el color puede hacer por ti.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="https://placehold.co/500x500/0a9396/ffffff?text=Salón+Moderno" alt="Salón moderno" class="rounded-lg shadow-md w-full h-full object-cover">
+                <img src="https://placehold.co/500x700/ee9b00/ffffff?text=Detalle+Papel" alt="Detalle papel pintado" class="rounded-lg shadow-md w-full h-full object-cover">
+                <img src="https://placehold.co/500x500/94d2bd/ffffff?text=Dormitorio" alt="Dormitorio acogedor" class="rounded-lg shadow-md w-full h-full object-cover">
+                <img src="https://placehold.co/500x700/005f73/ffffff?text=Fachada+Exterior" alt="Fachada exterior" class="rounded-lg shadow-md w-full h-full object-cover">
+            </div>
+        </section>
+        
+        <!-- Sección Contacto -->
+        <section id="contacto" class="py-20 md:py-28 bg-white border-t">
+            <div class="text-center max-w-2xl mx-auto px-6 animate-on-scroll">
+                 <h2 class="text-4xl md:text-5xl font-display text-primary mb-4">Contacta con Micras</h2>
+                 <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                    Visítanos en nuestra tienda o llámanos para cualquier consulta. Estaremos encantados de ayudarte a encontrar el color perfecto.
+                 </p>
+                <div class="bg-light-bg p-8 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-semibold mb-4">Información de Contacto</h3>
+                    <p class="text-lg text-gray-600 mb-2"><strong class="font-semibold">Dirección:</strong> Tu dirección aquí, León</p>
+                    <p class="text-lg text-gray-600 mb-6"><strong class="font-semibold">Teléfono:</strong> Tu teléfono aquí</p>
+                     <a href="#" class="w-full inline-block btn-primary px-10 py-4 rounded-lg font-bold tracking-wide text-lg">
+                        LLAMAR AHORA
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-text text-gray-400">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.instagram.com/micras_ti" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.153 2.153c.247.636.398 1.363.445 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.047 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.153 2.153c-.636.247-1.363.398-2.427.445-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.153-2.153c-.247-.636-.398-1.363-.445-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.047-1.064.218-1.791.465-2.427a4.902 4.902 0 012.153-2.153c.636-.247 1.363.398 2.427.445 1.024-.048 1.378.06 3.808-.06zM12 0C9.525 0 9.148.01 8.042.059c-1.11.05-1.897.227-2.612.503a6.897 6.897 0 00-2.583 2.583c-.276.715-.453-1.502-.503 2.612C2.01 9.148 2 9.525 2 12s.01 2.852.059 3.958c.05 1.11.227 1.897.503 2.612a6.897 6.897 0 002.583 2.583c.715.276 1.502.453 2.612.503C9.148 21.99 9.525 22 12 22s2.852-.01 3.958-.059c1.11-.05 1.897-.227 2.612-.503a6.897 6.897 0 002.583-2.583c.276-.715.453-1.502-.503-2.612.049-1.106.059-1.483.059-3.958s-.01-2.852-.059-3.958c-.05-1.11-.227-1.897-.503-2.612a6.897 6.897 0 00-2.583-2.583c-.715-.276-1.502-.453-2.612-.503C14.852 2.01 14.475 2 12 2h.001zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+            <p class="text-sm">&copy; 2024 Micras Pintura y Decoración.</p>
+        </div>
+    </footer>
+
+<script>
+    // Script para menú móvil
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Script para cambiar el header al hacer scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.remove('bg-transparent');
+            header.classList.add('bg-white/80', 'backdrop-blur-sm', 'shadow-sm');
+        } else {
+             header.classList.add('bg-transparent');
+            header.classList.remove('bg-white/80', 'backdrop-blur-sm', 'shadow-sm');
+        }
+    });
+
+    // Script para animaciones de entrada al hacer scroll
+    const sections = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                entry.target.style.animation = `fadeIn 1s ease-out forwards`;
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>
