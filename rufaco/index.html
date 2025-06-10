@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rufaco Soba - Ramen & Street Food</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-bg: #111111;
+            --accent-red: #E53935; /* Un rojo intenso, como el chili */
+            --text-light: #f5f5f5;
+            --text-muted: #a3a3a3;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+        }
+        h1, h2, h3, .font-display {
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 2px;
+        }
+        .hero-bg {
+             background-image: linear-gradient(to top, rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 0) 50%), url('https://placehold.co/1920x1080/1a1a1a/fff?text=Bowl+de+Ramen');
+             background-size: cover;
+             background-position: center;
+        }
+        .bg-accent-red { background-color: var(--accent-red); }
+        .text-accent-red { color: var(--accent-red); }
+        .border-accent-red { border-color: var(--accent-red); }
+        
+        .btn-accent {
+            background-color: var(--accent-red);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-accent:hover {
+            background-color: #c42d2a;
+            transform: scale(1.05);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 1s ease-out, transform 0.6s ease-out;
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-dark-bg">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-4xl font-display text-white" id="logo">RUFACO SOBA</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#filosofia" class="text-gray-300 hover:text-white transition-colors duration-300 font-bold">FILOSOFÍA</a>
+                <a href="#carta" class="text-gray-300 hover:text-white transition-colors duration-300 font-bold">LA CARTA</a>
+                <a href="#contacto" class="text-gray-300 hover:text-white transition-colors duration-300 font-bold">CONTACTO</a>
+                <a href="#contacto" class="btn-accent px-6 py-2 font-bold text-sm tracking-widest">PEDIR AHORA</a>
+            </nav>
+            <div class="md:hidden">
+                 <button id="menu-btn" class="text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                 </button>
+            </div>
+        </div>
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-bg/95 backdrop-blur-sm">
+            <a href="#filosofia" class="block text-center py-4 px-4 text-white hover:bg-gray-800 font-bold">FILOSOFÍA</a>
+            <a href="#carta" class="block text-center py-4 px-4 text-white hover:bg-gray-800 font-bold">LA CARTA</a>
+            <a href="#contacto" class="block text-center py-4 px-4 text-white hover:bg-gray-800 font-bold">CONTACTO</a>
+            <a href="#contacto" class="block text-center py-4 px-4 bg-accent-red text-white font-bold tracking-widest">PEDIR AHORA</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="h-screen w-full flex items-end pb-24 md:pb-32 justify-center text-center text-white hero-bg">
+        <div class="max-w-4xl px-4 animate-on-scroll is-visible">
+            <h1 class="text-6xl md:text-9xl font-display">EL SABOR DE LA CALLE</h1>
+            <p class="mt-2 text-lg md:text-2xl font-light text-text-muted">Ramen y delicias asiáticas. Sin filtros.</p>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 lg:px-12">
+
+        <!-- Sección Filosofía -->
+        <section id="filosofia" class="py-20 md:py-32 grid md:grid-cols-2 gap-12 items-center animate-on-scroll">
+            <div class="pr-0 md:pr-10">
+                <h2 class="text-5xl md:text-7xl font-display text-white mb-6">PASIÓN <span class="text-accent-red">POR EL</span> STREET FOOD</h2>
+                <p class="text-lg text-text-muted mb-4 leading-relaxed">
+                   Rufaco Soba nace de nuestra obsesión por la comida callejera asiática. Exploramos recetas, caldos y técnicas para traerte a León el sabor auténtico y potente que nos enamoró en nuestros viajes.
+                </p>
+                <p class="text-lg text-text-muted leading-relaxed">
+                   Aquí no hay secretos, solo buenos ingredientes, mucha paciencia para nuestros caldos y un profundo respeto por la cultura del ramen.
+                </p>
+            </div>
+             <div>
+                <img src="https://placehold.co/600x700/1f1f1f/E53935?text=Chefs+en+acción" alt="Chefs cocinando" class="w-full h-auto object-cover shadow-2xl">
+            </div>
+        </section>
+
+        <!-- Sección La Carta -->
+        <section id="carta" class="py-20 md:py-28 border-t border-gray-800">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-5xl md:text-7xl font-display text-white mb-4">NUESTROS <span class="text-accent-red">IMPRESCINDIBLES</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Plato 1 -->
+                <div class="bg-[#1c1c1c] p-6 shadow-2xl transition-transform duration-300 card-hover animate-on-scroll">
+                    <img src="https://placehold.co/500x400/E53935/fff?text=RAMEN" alt="Ramen" class="w-full h-56 object-cover mb-5">
+                    <h3 class="text-3xl font-display text-white">RAMEN</h3>
+                    <p class="text-text-muted mt-2">Caldos cocinados por horas, fideos frescos y toppings que marcan la diferencia. Desde el clásico Tonkotsu hasta el picante Tantanmen.</p>
+                </div>
+                <!-- Plato 2 -->
+                <div class="bg-[#1c1c1c] p-6 shadow-2xl transition-transform duration-300 card-hover animate-on-scroll" style="transition-delay: 200ms;">
+                    <img src="https://placehold.co/500x400/E53935/fff?text=GYOZAS" alt="Gyozas" class="w-full h-56 object-cover mb-5">
+                    <h3 class="text-3xl font-display text-white">GYOZAS</h3>
+                    <p class="text-text-muted mt-2">Hechas a mano cada día. Crujientes por fuera, jugosas por dentro. Pídelas de cerdo, pollo o vegetales.</p>
+                </div>
+                <!-- Plato 3 -->
+                <div class="bg-[#1c1c1c] p-6 shadow-2xl transition-transform duration-300 card-hover animate-on-scroll" style="transition-delay: 400ms;">
+                     <img src="https://placehold.co/500x400/E53935/fff?text=BAOS" alt="Baos" class="w-full h-56 object-cover mb-5">
+                    <h3 class="text-3xl font-display text-white">BAOS</h3>
+                    <p class="text-text-muted mt-2">Pan al vapor tierno y esponjoso, relleno de maravillas como nuestra panceta cocinada a baja temperatura.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Sección Contacto y Reservas -->
+        <section id="contacto" class="py-24 my-20 bg-accent-red text-white animate-on-scroll">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-5xl md:text-7xl font-display mb-4">PIDE TU BOWL</h2>
+                 <p class="max-w-2xl mx-auto text-xl text-red-100 mb-8">
+                    Estamos en el centro de León. Pásate a por tu pedido para llevar o llama para reservar tu sitio. ¡No te quedes con las ganas!
+                 </p>
+                 <a href="tel:PON-AQUI-EL-TELEFONO" class="inline-block bg-white text-accent-red font-bold hover:bg-gray-200 transition-colors duration-300 px-12 py-4 text-xl tracking-widest shadow-xl">
+                    LLAMAR AHORA
+                </a>
+                <div class="mt-8 font-bold text-red-200">
+                    <p>📍 Calle Varillas, 1, 24003 León</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black">
+        <div class="container mx-auto px-6 py-8 text-center text-text-muted">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.instagram.com/rufaco_soba" target="_blank" class="text-text-muted hover:text-white transition-colors duration-300">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.153 2.153c.247.636.398 1.363.445 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.047 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.153 2.153c-.636.247-1.363.398-2.427.445-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.153-2.153c-.247-.636-.398-1.363-.445-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.047-1.064.218-1.791.465-2.427a4.902 4.902 0 012.153-2.153c.636-.247 1.363.398 2.427.445 1.024-.048 1.378.06 3.808-.06zM12 0C9.525 0 9.148.01 8.042.059c-1.11.05-1.897.227-2.612.503a6.897 6.897 0 00-2.583 2.583c-.276.715-.453-1.502-.503 2.612C2.01 9.148 2 9.525 2 12s.01 2.852.059 3.958c.05 1.11.227 1.897.503 2.612a6.897 6.897 0 002.583 2.583c.715.276 1.502.453 2.612.503C9.148 21.99 9.525 22 12 22s2.852-.01 3.958-.059c1.11-.05 1.897-.227 2.612-.503a6.897 6.897 0 002.583-2.583c.276-.715.453-1.502-.503-2.612.049-1.106.059-1.483.059-3.958s-.01-2.852-.059-3.958c-.05-1.11-.227-1.897-.503-2.612a6.897 6.897 0 00-2.583-2.583c-.715-.276-1.502-.453-2.612-.503C14.852 2.01 14.475 2 12 2h.001zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+            <p class="text-sm">&copy; 2024 Rufaco Soba. Street Food Culture.</p>
+        </div>
+    </footer>
+
+
+<script>
+    // Script para menú móvil
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Script para cambiar el header al hacer scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('bg-dark-bg/90', 'backdrop-blur-sm', 'shadow-lg');
+            header.classList.remove('bg-transparent');
+        } else {
+            header.classList.remove('bg-dark-bg/90', 'backdrop-blur-sm', 'shadow-lg');
+            header.classList.add('bg-transparent');
+        }
+    });
+
+    // Script para animaciones de entrada al hacer scroll
+    const sections = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                entry.target.style.animation = `fadeIn 1s ease-out forwards`;
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>
