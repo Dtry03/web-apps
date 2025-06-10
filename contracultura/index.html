@@ -3,52 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contracultura Restaurante - Cocina Creativa</title>
+    <title>Contracultura Restaurante - Cocina de Leña en Veguellina</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --dark-bg: #121212;
-            --accent-magenta: #ff00ff; /* Magenta vibrante */
-            --text-light: #e5e5e5;
-            --text-muted: #a3a3a3;
+            --primary: #9a3412; /* Un color teja/ladrillo oscuro */
+            --secondary-bg: #fefcf9; /* Un blanco roto, muy cálido */
+            --dark-text: #44403c; /* Stone-800 de Tailwind */
         }
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--secondary-bg);
+            color: var(--dark-text);
         }
-        h1, h2, h3, .font-display {
-            font-family: 'Syne', sans-serif;
-            font-weight: 800;
-            text-transform: uppercase;
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
         }
         .hero-bg {
-             background-image: linear-gradient(to top, rgba(18, 18, 18, 1) 10%, rgba(18, 18, 18, 0) 70%), url('https://placehold.co/1920x1080/121212/e5e5e5?text=Plato+Creativo');
+             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1920x1080/44403c/fefcf9?text=Horno+de+Leña+🔥');
              background-size: cover;
              background-position: center;
         }
-        .bg-accent { background-color: var(--accent-magenta); }
-        .text-accent { color: var(--accent-magenta); }
+        .bg-primary { background-color: var(--primary); }
+        .text-primary { color: var(--primary); }
+        .border-primary { border-color: var(--primary); }
         
-        .btn-accent {
-            background-color: transparent;
-            color: var(--accent-magenta);
-            border: 2px solid var(--accent-magenta);
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
             transition: all 0.3s ease;
-            padding: 10px 30px;
         }
-        .btn-accent:hover {
-            background-color: var(--accent-magenta);
-            color: var(--dark-bg);
-            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
-        }
-
-        .gallery-img:hover {
-            transform: scale(1.05);
-            z-index: 10;
+        .btn-primary:hover {
+            background-color: #7c2d10;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         @keyframes fadeIn {
@@ -65,16 +56,16 @@
         }
     </style>
 </head>
-<body class="bg-dark-bg">
+<body class="bg-secondary-bg">
 
     <!-- Header -->
-    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent">
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-3xl font-display text-white tracking-widest" id="logo">CONTRACULTURA</a>
+            <a href="#" class="text-3xl font-serif text-white md:text-primary" id="logo">Contracultura</a>
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="#filosofia" class="text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider text-sm">FILOSOFÍA</a>
-                <a href="#menu" class="text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider text-sm">EL MENÚ</a>
-                <a href="#contacto" class="btn-accent font-bold text-sm tracking-widest">RESERVAR</a>
+                <a href="#cocina-abuela" class="text-white md:text-gray-700 hover:text-primary transition-colors duration-300 font-semibold">Nuestra Cocina</a>
+                <a href="#maestra-asadora" class="text-white md:text-gray-700 hover:text-primary transition-colors duration-300 font-semibold">Maestra Asadora</a>
+                <a href="#contacto" class="btn-primary px-6 py-2 rounded-md font-bold shadow-sm">Reservar</a>
             </nav>
             <div class="md:hidden">
                  <button id="menu-btn" class="text-white focus:outline-none">
@@ -83,69 +74,99 @@
             </div>
         </div>
         <!-- Menú Móvil -->
-        <div id="mobile-menu" class="hidden md:hidden bg-dark-bg/98 backdrop-blur-sm">
-            <a href="#filosofia" class="block text-center py-4 px-4 text-white hover:bg-gray-800 font-semibold tracking-wider">FILOSOFÍA</a>
-            <a href="#menu" class="block text-center py-4 px-4 text-white hover:bg-gray-800 font-semibold tracking-wider">EL MENÚ</a>
-            <a href="#contacto" class="block text-center py-4 px-4 bg-accent text-dark-bg font-bold tracking-widest">RESERVAR</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-secondary-bg/98 backdrop-blur-sm">
+            <a href="#cocina-abuela" class="block text-center py-3 px-4 text-primary hover:bg-gray-200 font-semibold">Nuestra Cocina</a>
+            <a href="#maestra-asadora" class="block text-center py-3 px-4 text-primary hover:bg-gray-200 font-semibold">Maestra Asadora</a>
+            <a href="#contacto" class="block text-center py-4 px-4 bg-primary text-white font-bold">Reservar</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="min-h-screen w-full flex items-center justify-center text-center text-white hero-bg">
+    <section class="h-[90vh] md:h-screen w-full flex items-center justify-center text-center text-white hero-bg">
         <div class="max-w-4xl px-4 animate-on-scroll is-visible">
-            <h1 class="text-5xl md:text-8xl font-display">Rompiendo las reglas del sabor</h1>
-            <p class="mt-4 text-lg md:text-xl font-light text-text-muted">Cocina creativa de temporada. <br>Una experiencia que desafía lo convencional.</p>
+            <h1 class="text-5xl md:text-7xl font-serif">La cocina de siempre,<br>al más puro estilo de la abuela</h1>
+            <p class="mt-6 text-lg md:text-xl font-light">Especialistas en cocina de leña y asados. Sabor y tradición en Veguellina de Órbigo.</p>
         </div>
     </section>
 
     <main class="container mx-auto px-6 lg:px-12">
 
-        <!-- Sección Filosofía -->
-        <section id="filosofia" class="py-24 md:py-40 grid md:grid-cols-2 gap-16 items-center animate-on-scroll">
+        <!-- Sección Cocina de la Abuela -->
+        <section id="cocina-abuela" class="py-20 md:py-32 grid md:grid-cols-2 gap-16 items-center animate-on-scroll">
             <div class="pr-0 md:pr-10">
-                <h2 class="text-4xl md:text-6xl font-display text-white mb-6">Producto, <br>Técnica y <span class="text-accent">Rebeldía</span></h2>
-                <p class="text-lg text-text-muted mb-4 leading-relaxed">
-                   Contracultura es nuestra forma de entender la gastronomía: un lienzo en blanco. Partimos del mejor producto local y de temporada para crear platos libres, sin ataduras, que buscan sorprender y emocionar.
+                <h2 class="text-4xl md:text-5xl font-serif text-primary mb-6">El Sabor que Reconoces</h2>
+                <p class="text-lg text-gray-700 mb-4 leading-relaxed">
+                   En Contracultura, cocinamos como nos enseñaron nuestras abuelas: con cariño, sin prisas y con el mejor producto de la tierra. Nuestra cocina de leña es el corazón del restaurante, donde la magia sucede.
                 </p>
-                <p class="text-lg text-text-muted leading-relaxed">
-                   Somos inconformistas. Creemos en una cocina que evoluciona, que cuenta historias y que se fusiona con el arte que nos rodea.
+                <p class="text-lg text-gray-700 leading-relaxed">
+                   Recuperamos recetas de toda la vida para ofrecer una experiencia auténtica, donde cada plato te transporta a los sabores de la infancia. Esta es tu casa.
                 </p>
             </div>
              <div>
-                <img src="https://placehold.co/600x700/1a1a1a/ff00ff?text=Arte+y+Decoración" alt="Arte en el restaurante Contracultura" class="w-full h-auto object-cover shadow-2xl">
+                <img src="https://placehold.co/600x700/e6dace/44403c?text=Guiso+Tradicional" alt="Guiso tradicional servido en cazuela de barro" class="w-full h-auto object-cover shadow-2xl rounded-lg">
             </div>
         </section>
 
-        <!-- Sección El Menú -->
-        <section id="menu" class="py-20 md:py-28">
-            <div class="text-center mb-16 animate-on-scroll">
-                <h2 class="text-4xl md:text-6xl font-display text-white mb-4">La Experiencia</h2>
-                <p class="max-w-3xl mx-auto text-lg text-text-muted leading-relaxed">Te invitamos a dejarte llevar por nuestro menú degustación o a explorar los sabores de nuestra carta. Tú eliges el viaje.</p>
+        <!-- Sección Maestra Asadora -->
+        <section id="maestra-asadora" class="py-20 md:py-28 bg-white shadow-lg rounded-lg">
+            <div class="grid md:grid-cols-5 gap-8 items-center animate-on-scroll">
+                <div class="md:col-span-2">
+                    <img src="https://placehold.co/600x750/3a3a3a/fefcf9?text=Maestra+Asadora" alt="Maestra asadora trabajando en la parrilla de leña" class="w-full h-full object-cover md:rounded-l-lg">
+                </div>
+                <div class="md:col-span-3 p-8">
+                     <h2 class="text-4xl font-serif text-primary mb-4">El Toque de la Maestra Asadora</h2>
+                     <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Nuestra Maestra Asadora es el alma de la parrilla. Con años de experiencia, domina el fuego de leña para conseguir el punto exacto en cada pieza de carne y pescado.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Su secreto no es ningún secreto: paciencia, una materia prima excelente y el conocimiento del fuego que solo da la experiencia.
+                    </p>
+                </div>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-1">
-                <div class="overflow-hidden"><img src="https://placehold.co/500x500/ff00ff/121212?text=Plato+1" alt="Plato creativo 1" class="w-full h-full object-cover transition-transform duration-500 gallery-img"></div>
-                <div class="overflow-hidden"><img src="https://placehold.co/500x500/ff00ff/121212?text=Plato+2" alt="Plato creativo 2" class="w-full h-full object-cover transition-transform duration-500 gallery-img"></div>
-                <div class="overflow-hidden"><img src="https://placehold.co/500x500/ff00ff/121212?text=Plato+3" alt="Plato creativo 3" class="w-full h-full object-cover transition-transform duration-500 gallery-img"></div>
-                <div class="overflow-hidden"><img src="https://placehold.co/500x500/ff00ff/121212?text=Plato+4" alt="Plato creativo 4" class="w-full h-full object-cover transition-transform duration-500 gallery-img"></div>
-                <div class="overflow-hidden col-span-2"><img src="https://placehold.co/1000x500/ff00ff/121212?text=Plato+5" alt="Plato creativo 5" class="w-full h-full object-cover transition-transform duration-500 gallery-img"></div>
-                <div class="overflow-hidden"><img src="https://placehold.co/500x500/ff00ff/121212?text=Plato+6" alt="Plato creativo 6" class="w-full h-full object-cover transition-transform duration-500 gallery-img"></div>
-                <div class="overflow-hidden"><img src="https://placehold.co/500x500/ff00ff/121212?text=Plato+7" alt="Plato creativo 7" class="w-full h-full object-cover transition-transform duration-500 gallery-img"></div>
+        </section>
+
+        <!-- Sección Especialidades -->
+        <section class="py-20 md:py-32">
+             <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-serif text-primary mb-4">Nuestras Especialidades</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="text-center animate-on-scroll">
+                    <img src="https://placehold.co/500x400/bcaaa4/44403c?text=Carnes+a+la+Leña" class="w-full h-64 object-cover rounded-lg shadow-xl mb-4" alt="Carnes a la leña">
+                    <h3 class="text-2xl font-serif">Carnes a la Leña</h3>
+                    <p class="text-gray-600 mt-2">Chuletones, entrecots y solomillos con el inconfundible sabor de la brasa.</p>
+                </div>
+                <div class="text-center animate-on-scroll" style="transition-delay: 200ms;">
+                    <img src="https://placehold.co/500x400/c5a78f/44403c?text=Pescados+frescos" class="w-full h-64 object-cover rounded-lg shadow-xl mb-4" alt="Pescados a la brasa">
+                    <h3 class="text-2xl font-serif">Pescados a la Brasa</h3>
+                    <p class="text-gray-600 mt-2">Piezas frescas del día, cocinadas sobre el fuego para un sabor único.</p>
+                </div>
+                <div class="text-center animate-on-scroll" style="transition-delay: 400ms;">
+                    <img src="https://placehold.co/500x400/d7ccc8/44403c?text=Postres+de+la+Abuela" class="w-full h-64 object-cover rounded-lg shadow-xl mb-4" alt="Postres caseros">
+                    <h3 class="text-2xl font-serif">Postres Caseros</h3>
+                    <p class="text-gray-600 mt-2">Flan, tarta de la abuela, arroz con leche... El final que te mereces.</p>
+                </div>
             </div>
         </section>
 
 
         <!-- Sección Contacto y Reservas -->
-        <section id="contacto" class="py-24 my-20 border-t border-b border-gray-800 animate-on-scroll">
-            <div class="container mx-auto px-6 text-center">
-                 <h2 class="text-4xl md:text-6xl font-display text-white mb-4">Reserva tu Experiencia</h2>
-                 <p class="max-w-2xl mx-auto text-xl text-text-muted mb-8">
-                    Las plazas son limitadas. Te recomendamos reservar con antelación para unirte a la contracultura.
-                 </p>
-                 <a href="tel:987033303" class="inline-block btn-accent font-bold text-lg tracking-widest">
-                    LLAMAR AHORA
-                </a>
-                <div class="mt-8 font-semibold text-text-muted">
-                    <p>Calle Cervantes, 9, 24003 León</p>
+        <section id="contacto" class="py-20 md:py-28 border-t border-gray-200 animate-on-scroll">
+            <div class="text-center mb-16">
+                 <h2 class="text-4xl md:text-5xl font-serif text-primary mb-4">Le Esperamos</h2>
+                 <p class="max-w-2xl mx-auto text-lg text-gray-700">Encuéntrenos en Veguellina de Órbigo. Llámenos para reservar su mesa.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+                 <div class="bg-white p-8 rounded-lg shadow-2xl border-t-4 border-primary">
+                    <h3 class="text-2xl font-serif mb-4 text-center">Información y Reservas</h3>
+                    <p class="text-lg text-gray-700 mb-2"><strong class="font-semibold">Dirección:</strong> C/ Pío de Cela, 26. Veguellina de Órbigo, León</p>
+                    <p class="text-lg text-gray-700 mb-6"><strong class="font-semibold">Teléfono:</strong> 987 37 42 88</p>
+                     <a href="tel:987374288" class="w-full text-center inline-block btn-primary px-10 py-4 rounded-lg font-bold tracking-wide text-lg">
+                        Llamar para Reservar
+                    </a>
+                </div>
+                <div class="w-full h-96">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2979.914979140461!2d-5.897368684565017!3d42.45184697918072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd376378c35d259f%3A0x633d994358f28c2c!2sC.%20P%C3%ADo%20de%20Cela%2C%2026%2C%2024350%20Veguellina%20de%20%C3%93rbigo%2C%20Le%C3%B3n!5e0!3m2!1ses!2ses!4v1683889854321!5m2!1ses!2ses" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow-xl"></iframe>
                 </div>
             </div>
         </section>
@@ -153,14 +174,14 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black">
-        <div class="container mx-auto px-6 py-8 text-center text-text-muted">
+    <footer class="bg-dark-text text-gray-300">
+        <div class="container mx-auto px-6 py-8 text-center">
             <div class="flex justify-center space-x-6 mb-6">
-                <a href="https://www.instagram.com/contracultura_restaurante" target="_blank" class="text-text-muted hover:text-white transition-colors duration-300">
+                <a href="https://www.instagram.com/contracultura_restaurante" target="_blank" class="text-gray-300 hover:text-white transition-colors duration-300">
                     <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.153 2.153c.247.636.398 1.363.445 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.047 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.153 2.153c-.636.247-1.363.398-2.427.445-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.153-2.153c-.247-.636-.398-1.363-.445-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.047-1.064.218-1.791.465-2.427a4.902 4.902 0 012.153-2.153c.636-.247 1.363.398 2.427.445 1.024-.048 1.378.06 3.808-.06zM12 0C9.525 0 9.148.01 8.042.059c-1.11.05-1.897.227-2.612.503a6.897 6.897 0 00-2.583 2.583c-.276.715-.453-1.502-.503 2.612C2.01 9.148 2 9.525 2 12s.01 2.852.059 3.958c.05 1.11.227 1.897.503 2.612a6.897 6.897 0 002.583 2.583c.715.276 1.502.453 2.612.503C9.148 21.99 9.525 22 12 22s2.852-.01 3.958-.059c1.11-.05 1.897-.227 2.612-.503a6.897 6.897 0 002.583-2.583c.276-.715.453-1.502-.503-2.612.049-1.106.059-1.483.059-3.958s-.01-2.852-.059-3.958c-.05-1.11-.227-1.897-.503-2.612a6.897 6.897 0 00-2.583-2.583c-.715-.276-1.502-.453-2.612-.503C14.852 2.01 14.475 2 12 2h.001zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" clip-rule="evenodd" /></svg>
                 </a>
             </div>
-            <p class="text-sm">&copy; 2024 Contracultura Restaurante. León.</p>
+            <p class="text-sm">&copy; 2024 Contracultura Restaurante. Cocina de leña.</p>
         </div>
     </footer>
 
@@ -175,13 +196,32 @@
 
     // Script para cambiar el header al hacer scroll
     const header = document.getElementById('header');
+    const logo = document.getElementById('logo');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            header.classList.add('bg-dark-bg/95', 'backdrop-blur-sm');
-            header.classList.remove('bg-transparent');
+            header.classList.add('bg-secondary-bg', 'shadow-sm');
+            logo.classList.remove('text-white');
+            logo.classList.add('text-primary');
+            menuBtn.classList.remove('text-white');
+            menuBtn.classList.add('text-primary');
+            header.querySelectorAll('nav a').forEach(a => {
+                if (!a.classList.contains('btn-primary')) {
+                   a.classList.remove('text-white');
+                   a.classList.add('md:text-gray-700');
+                }
+            });
         } else {
-            header.classList.remove('bg-dark-bg/95', 'backdrop-blur-sm');
-            header.classList.add('bg-transparent');
+            header.classList.remove('bg-secondary-bg', 'shadow-sm');
+            logo.classList.add('text-white');
+            logo.classList.remove('text-primary');
+            menuBtn.classList.add('text-white');
+            menuBtn.classList.remove('text-primary');
+             header.querySelectorAll('nav a').forEach(a => {
+                 if (!a.classList.contains('btn-primary')) {
+                    a.classList.add('text-white');
+                    a.classList.remove('md:text-gray-700');
+                 }
+            });
         }
     });
 
