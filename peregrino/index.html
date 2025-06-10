@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante El Peregrino - Carnes a la Brasa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f1eb;
+            color: #4a4a4a;
+        }
+        h1, h2, h3, .font-display {
+            font-family: 'Roboto Slab', serif;
+        }
+        .hero-bg {
+             background-image: linear-gradient(rgba(44, 28, 15, 0.6), rgba(44, 28, 15, 0.6)), url('https://placehold.co/1920x1080/6B4F4F/fff?text=Chulet%C3%B3n+a+la+Brasa');
+             background-size: cover;
+             background-position: center;
+             background-attachment: fixed;
+        }
+        .bg-wood { background-color: #6B4F4F; }
+        .text-wood { color: #6B4F4F; }
+        .bg-stone { background-color: #EED6C4; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 1s ease-out, transform 0.8s ease-out;
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-[#f4f1eb]">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-display font-bold tracking-tight text-white md:text-stone-800" id="logo">El Peregrino</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#tradicion" class="text-white md:text-gray-700 hover:text-wood transition-colors duration-300 font-medium">Tradición</a>
+                <a href="#brasas" class="text-white md:text-gray-700 hover:text-wood transition-colors duration-300 font-medium">Nuestras Brasas</a>
+                <a href="#contacto" class="text-white md:text-gray-700 hover:text-wood transition-colors duration-300 font-medium">Contacto</a>
+                <a href="#contacto" class="bg-wood text-white hover:bg-opacity-80 transition-colors duration-300 px-6 py-2 rounded-md font-bold shadow-lg">Reservar</a>
+            </nav>
+            <div class="md:hidden">
+                 <button id="menu-btn" class="text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                 </button>
+            </div>
+        </div>
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/98">
+            <a href="#tradicion" class="block text-center py-3 px-4 text-gray-800 hover:bg-stone-100 font-medium">Tradición</a>
+            <a href="#brasas" class="block text-center py-3 px-4 text-gray-800 hover:bg-stone-100 font-medium">Nuestras Brasas</a>
+            <a href="#contacto" class="block text-center py-3 px-4 text-gray-800 hover:bg-stone-100 font-medium">Contacto</a>
+            <a href="#contacto" class="block text-center py-4 px-4 bg-wood text-white font-bold">Reservar</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="h-screen w-full flex items-center justify-center text-center text-white hero-bg">
+        <div class="max-w-4xl px-4 animate-on-scroll is-visible">
+            <h1 class="text-5xl md:text-7xl font-display">El Descanso del Buen Comer</h1>
+            <p class="mt-6 text-lg md:text-xl font-light max-w-2xl mx-auto">Cocina tradicional y las mejores carnes a la brasa te esperan al final del camino.</p>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 lg:px-12">
+
+        <!-- Sección Tradición -->
+        <section id="tradicion" class="py-20 md:py-32 grid md:grid-cols-2 gap-12 items-center animate-on-scroll">
+            <div>
+                <h2 class="text-4xl md:text-5xl font-display text-wood mb-6">Un Legado de Sabor</h2>
+                <p class="text-lg text-gray-700 mb-4 leading-relaxed">
+                    En Restaurante El Peregrino, creemos en la cocina de siempre. La que se hace sin prisa, con el mejor producto de la tierra y el respeto por las recetas que han pasado de generación en generación.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Nuestra casa es un homenaje a la comida honesta, donde cada plato es un reflejo de nuestra pasión por la gastronomía. Siéntese a nuestra mesa y disfrute.
+                </p>
+            </div>
+            <div>
+                <img src="https://placehold.co/600x700/A87C7C/ffffff?text=Interior+R%C3%BAstico" alt="Interior rústico del Restaurante El Peregrino" class="rounded-lg shadow-2xl w-full h-auto object-cover">
+            </div>
+        </section>
+
+        <!-- Sección Nuestras Brasas -->
+        <section id="brasas" class="py-20 md:py-28 border-t border-stone-200">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-display text-wood mb-4">El Alma de la Casa: Nuestras Brasas</h2>
+                <p class="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed">Seleccionamos las mejores carnes para que la parrilla obre su magia. Sabor, jugosidad y ese toque inconfundible del fuego de leña.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Plato 1 -->
+                <div class="text-center animate-on-scroll">
+                    <img src="https://placehold.co/500x500/8B4513/ffffff?text=Chulet%C3%B3n+de+Vaca" alt="Chuletón de Vaca" class="rounded-lg shadow-xl w-full h-auto object-cover mb-4">
+                    <h3 class="text-2xl font-display">Chuletón de Vaca Madurada</h3>
+                    <p class="text-gray-600">El rey de nuestra parrilla.</p>
+                </div>
+                <!-- Plato 2 -->
+                <div class="text-center animate-on-scroll" style="transition-delay: 200ms;">
+                    <img src="https://placehold.co/500x500/D2B48C/333?text=Cachopo+Tradicional" alt="Cachopo" class="rounded-lg shadow-xl w-full h-auto object-cover mb-4">
+                    <h3 class="text-2xl font-display">Cachopo Asturiano</h3>
+                    <p class="text-gray-600">Crujiente, jugoso y gigante.</p>
+                </div>
+                <!-- Plato 3 -->
+                <div class="text-center animate-on-scroll" style="transition-delay: 400ms;">
+                     <img src="https://placehold.co/500x500/A0522D/ffffff?text=Pescado+a+la+brasa" alt="Pescado a la brasa" class="rounded-lg shadow-xl w-full h-auto object-cover mb-4">
+                    <h3 class="text-2xl font-display">Pescado Fresco a la Brasa</h3>
+                    <p class="text-gray-600">El sabor del mar con el toque del fuego.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Cita -->
+        <section class="py-24 my-20 bg-stone animate-on-scroll">
+            <div class="text-center max-w-3xl mx-auto px-6">
+                <h3 class="text-3xl md:text-4xl font-display text-wood leading-snug">
+                    "Aquí, el tiempo se detiene y el buen comer se convierte en un arte."
+                </h3>
+            </div>
+        </section>
+
+
+        <!-- Sección Contacto y Reservas -->
+        <section id="contacto" class="py-20 md:py-28 animate-on-scroll">
+            <div class="text-center mb-16">
+                 <h2 class="text-4xl md:text-5xl font-display text-wood mb-4">Ubicación y Reservas</h2>
+                 <p class="max-w-2xl mx-auto text-lg text-gray-700">Encuéntrenos en el corazón del camino. Le recomendamos reservar para asegurar su mesa.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-2xl">
+                    <h3 class="text-2xl font-display mb-4">Información de Contacto</h3>
+                    <p class="text-lg text-gray-700 mb-2"><strong class="font-semibold">Dirección:</strong> Plaza el Peregrino, 5, 24320 Sahagún, León</p>
+                    <p class="text-lg text-gray-700 mb-6"><strong class="font-semibold">Teléfono:</strong> 642 16 02 46</p>
+                     <a href="tel:642160246" class="w-full text-center inline-block bg-wood text-white hover:bg-opacity-80 transition-colors duration-300 px-10 py-3 rounded-md font-bold tracking-wide text-lg shadow-lg">
+                        Llamar para Reservar
+                    </a>
+                </div>
+                <div>
+                     <img src="https://placehold.co/600x400/DCDCDC/333?text=Mapa+de+Sahag%C3%BAn" alt="Mapa de ubicación del restaurante" class="w-full h-80 object-cover rounded-lg shadow-lg">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-wood text-stone-200">
+        <div class="container mx-auto px-6 py-10 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.instagram.com/restauranteelperegrino2023" target="_blank" class="text-stone-200 hover:text-white transition-colors duration-300">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.153 2.153c.247.636.398 1.363.445 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.047 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.153 2.153c-.636.247-1.363.398-2.427.445-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.153-2.153c-.247-.636-.398-1.363-.445-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.047-1.064.218-1.791.465-2.427a4.902 4.902 0 012.153-2.153c.636-.247 1.363.398 2.427.445 1.024-.048 1.378.06 3.808-.06zM12 0C9.525 0 9.148.01 8.042.059c-1.11.05-1.897.227-2.612.503a6.897 6.897 0 00-2.583 2.583c-.276.715-.453-1.502-.503 2.612C2.01 9.148 2 9.525 2 12s.01 2.852.059 3.958c.05 1.11.227 1.897.503 2.612a6.897 6.897 0 002.583 2.583c.715.276 1.502.453 2.612.503C9.148 21.99 9.525 22 12 22s2.852-.01 3.958-.059c1.11-.05 1.897-.227 2.612-.503a6.897 6.897 0 002.583-2.583c.276-.715.453-1.502.503-2.612.049-1.106.059-1.483.059-3.958s-.01-2.852-.059-3.958c-.05-1.11-.227-1.897-.503-2.612a6.897 6.897 0 00-2.583-2.583c-.715-.276-1.502-.453-2.612-.503C14.852 2.01 14.475 2 12 2h.001zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+            <p class="text-stone-300 text-sm">&copy; 2024 Restaurante El Peregrino. La tradición del buen comer.</p>
+        </div>
+    </footer>
+
+
+<script>
+    // Script para menú móvil
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Script para cambiar el header al hacer scroll
+    const header = document.getElementById('header');
+    const logo = document.getElementById('logo');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('bg-[#f4f1eb]', 'shadow-md');
+            logo.classList.remove('text-white');
+            logo.classList.add('text-stone-800');
+            menuBtn.classList.remove('text-white');
+            menuBtn.classList.add('text-stone-800');
+            header.querySelectorAll('nav a').forEach(a => {
+                if (!a.matches('.bg-wood')) {
+                   a.classList.remove('text-white');
+                   a.classList.add('md:text-gray-700');
+                }
+            });
+        } else {
+            header.classList.remove('bg-[#f4f1eb]', 'shadow-md');
+            logo.classList.add('text-white');
+            logo.classList.remove('text-stone-800');
+            menuBtn.classList.add('text-white');
+            menuBtn.classList.remove('text-stone-800');
+             header.querySelectorAll('nav a').forEach(a => {
+                 if (!a.matches('.bg-wood')) {
+                    a.classList.add('text-white');
+                    a.classList.remove('md:text-gray-700');
+                 }
+            });
+        }
+    });
+
+    // Script para animaciones de entrada al hacer scroll
+    const sections = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                entry.target.style.animation = `fadeInUp 1s ease-out forwards`;
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>
