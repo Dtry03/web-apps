@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komo Sushi - Buffet a la Carta en A Coruña</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-bg: #121212;
+            --accent-red: #d90429; /* Un rojo intenso y moderno */
+            --text-light: #f1f1f1;
+            --text-muted: #a1a1a1;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+        }
+        h1, h2, h3, .font-display {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .hero-bg {
+             background-image: linear-gradient(to top, rgba(18, 18, 18, 1) 20%, rgba(18, 18, 18, 0.4) 100%), url('https://placehold.co/1920x1080/121212/d90429?text=SUSHI');
+             background-size: cover;
+             background-position: center;
+        }
+        .bg-accent { background-color: var(--accent-red); }
+        .text-accent { color: var(--accent-red); }
+        .border-accent { border-color: var(--accent-red); }
+        
+        .btn-accent {
+            background-color: var(--accent-red);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-accent:hover {
+            background-color: #b30322;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(217, 4, 41, 0.4);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 1s ease-out, transform 0.7s ease-out;
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-dark-bg">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-display text-white" id="logo">KOMO SUSHI</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#concepto" class="text-gray-300 hover:text-white transition-colors duration-300 font-bold text-sm tracking-wider">CONCEPTO</a>
+                <a href="#carta" class="text-gray-300 hover:text-white transition-colors duration-300 font-bold text-sm tracking-wider">CARTA</a>
+                <a href="#precios" class="text-gray-300 hover:text-white transition-colors duration-300 font-bold text-sm tracking-wider">PRECIOS</a>
+                <a href="#contacto" class="btn-accent px-6 py-2 rounded-sm font-bold shadow-md text-sm">RESERVAR</a>
+            </nav>
+            <div class="md:hidden">
+                 <button id="menu-btn" class="text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                 </button>
+            </div>
+        </div>
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-bg/95 backdrop-blur-sm">
+            <a href="#concepto" class="block text-center py-4 px-4 text-white hover:bg-gray-800 font-bold tracking-wider">CONCEPTO</a>
+            <a href="#carta" class="block text-center py-4 px-4 text-white hover:bg-gray-800 font-bold tracking-wider">CARTA</a>
+            <a href="#precios" class="block text-center py-4 px-4 text-white hover:bg-gray-800 font-bold tracking-wider">PRECIOS</a>
+            <a href="#contacto" class="block text-center py-4 px-4 bg-accent text-white font-bold tracking-wider">RESERVAR</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="h-screen w-full flex items-center justify-center text-center text-white hero-bg">
+        <div class="max-w-4xl px-4 animate-on-scroll is-visible">
+            <h1 class="text-6xl md:text-9xl font-display">Sushi Sin Fin</h1>
+            <p class="mt-4 text-lg md:text-2xl font-light text-text-muted">Nuevo buffet asiático a la carta en A Coruña. <br>Pide lo que quieras, las veces que quieras. Directo a tu mesa.</p>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 lg:px-12">
+
+        <!-- Sección Concepto -->
+        <section id="concepto" class="py-20 md:py-32 grid md:grid-cols-2 gap-16 items-center animate-on-scroll">
+            <div class="pr-0 md:pr-10">
+                <h2 class="text-4xl md:text-6xl font-display text-white mb-6">Come <span class="text-accent">todo</span> lo que quieras</h2>
+                <p class="text-lg text-text-muted mb-4 leading-relaxed">
+                   En Komo Sushi reinventamos el concepto de buffet. Olvídate de levantarte. Simplemente siéntate, mira nuestra carta y pide todo lo que te apetezca.
+                </p>
+                <p class="text-lg text-text-muted leading-relaxed">
+                   Nosotros te lo preparamos al momento y te lo llevamos a la mesa. Repite tus platos favoritos o prueba toda la carta. El único límite lo pones tú.
+                </p>
+            </div>
+             <div>
+                <img src="https://placehold.co/600x700/1a1a1a/d90429?text=Sushi+Variado" alt="Variedad de sushi en una tabla" class="w-full h-auto object-cover shadow-2xl rounded-lg">
+            </div>
+        </section>
+
+        <!-- Sección Carta -->
+        <section id="carta" class="py-20 md:py-28 border-t border-gray-800">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl md:text-6xl font-display text-white mb-4">Nuestra <span class="text-accent">Carta</span></h2>
+                <p class="max-w-3xl mx-auto text-lg text-text-muted leading-relaxed">Desde los nigiris más clásicos hasta los rolls más atrevidos y platos calientes de la cocina asiática.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="relative overflow-hidden rounded-lg group gallery-item transition-all duration-300"><img src="https://placehold.co/500x500/d90429/121212?text=Nigiris" alt="Nigiris variados" class="w-full h-full object-cover transition-transform duration-500"><div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 gallery-overlay transition-opacity duration-300"><h3 class="text-white text-2xl font-display">Nigiris</h3></div></div>
+                <div class="relative overflow-hidden rounded-lg group gallery-item transition-all duration-300"><img src="https://placehold.co/500x700/d90429/121212?text=Makis" alt="Makis" class="w-full h-full object-cover transition-transform duration-500"><div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 gallery-overlay transition-opacity duration-300"><h3 class="text-white text-2xl font-display">Makis</h3></div></div>
+                <div class="relative overflow-hidden rounded-lg group gallery-item transition-all duration-300"><img src="https://placehold.co/500x500/d90429/121212?text=Rolls" alt="Rolls especiales" class="w-full h-full object-cover transition-transform duration-500"><div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 gallery-overlay transition-opacity duration-300"><h3 class="text-white text-2xl font-display">Rolls Especiales</h3></div></div>
+                <div class="relative overflow-hidden rounded-lg group gallery-item transition-all duration-300"><img src="https://placehold.co/500x700/d90429/121212?text=Calientes" alt="Platos calientes" class="w-full h-full object-cover transition-transform duration-500"><div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 gallery-overlay transition-opacity duration-300"><h3 class="text-white text-2xl font-display">Platos Calientes</h3></div></div>
+            </div>
+        </section>
+        
+        <!-- Sección Precios -->
+        <section id="precios" class="py-24 my-20 bg-[#1c1c1c] animate-on-scroll">
+            <div class="text-center max-w-4xl mx-auto px-6">
+                <h2 class="text-4xl md:text-6xl font-display text-white mb-8">Nuestros <span class="text-accent">Precios</span> de Buffet</h2>
+                <div class="grid md:grid-cols-3 gap-8 text-white">
+                    <div class="border border-gray-700 p-8 rounded-lg">
+                        <h3 class="text-2xl font-display mb-2">Mediodía</h3>
+                        <p class="text-sm">(Lunes a Viernes)</p>
+                        <p class="text-4xl font-bold my-4">15,95€</p>
+                        <p class="text-text-muted">Niños 8,95€</p>
+                    </div>
+                    <div class="border-2 border-accent p-8 rounded-lg shadow-2xl shadow-red-900/20 scale-105">
+                        <h3 class="text-2xl font-display text-accent mb-2">Noches y Festivos</h3>
+                        <p class="text-sm">(Todos los días y findes)</p>
+                        <p class="text-5xl font-bold my-4">21,95€</p>
+                        <p class="text-text-muted">Niños 11,95€</p>
+                    </div>
+                    <div class="border border-gray-700 p-8 rounded-lg">
+                        <h3 class="text-2xl font-display mb-2">Bebida</h3>
+                        <p class="text-sm">(Refrescos)</p>
+                        <p class="text-4xl font-bold my-4">+2,95€</p>
+                        <p class="text-text-muted">Bebida ilimitada</p>
+                    </div>
+                </div>
+                <p class="text-text-muted text-sm mt-8">*Postre y bebida no incluidos, excepto en la opción de bebida ilimitada. Niños de 4 a 8 años.</p>
+            </div>
+        </section>
+
+        <!-- Sección Contacto y Reservas -->
+        <section id="contacto" class="py-20 md:py-28 animate-on-scroll">
+            <div class="text-center max-w-lg mx-auto">
+                 <h2 class="text-4xl md:text-6xl font-display text-white mb-4">Reserva tu mesa</h2>
+                 <p class="text-lg text-text-muted leading-relaxed mb-8">Asegura tu sitio en el paraíso del sushi. Llámanos para reservar.</p>
+                <div class="bg-[#1c1c1c] p-8 rounded-lg border border-gray-800">
+                    <h3 class="text-xl font-display mb-4">Komo Sushi</h3>
+                    <p class="text-lg text-gray-400 mb-2"><strong class="font-semibold text-white">Dirección:</strong> Avenida Buenos Aires 5-6 Bajo, 15004 A Coruña</p>
+                    <p class="text-lg text-gray-400 mb-6"><strong class="font-semibold text-white">Teléfono:</strong> [Su teléfono aquí]</p>
+                     <a href="#" class="w-full text-center block btn-accent px-10 py-4 rounded-md font-bold tracking-wide text-lg">
+                        LLAMAR PARA RESERVAR
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-500">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.instagram.com/komosushi_" target="_blank" class="text-gray-500 hover:text-white transition-colors duration-300">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.153 2.153c.247.636.398 1.363.445 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.047 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.153 2.153c-.636.247-1.363.398-2.427.445-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.153-2.153c-.247-.636-.398-1.363-.445-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.047-1.064.218-1.791.465-2.427a4.902 4.902 0 012.153-2.153c.636-.247 1.363.398 2.427.445 1.024-.048 1.378.06 3.808-.06zM12 0C9.525 0 9.148.01 8.042.059c-1.11.05-1.897.227-2.612.503a6.897 6.897 0 00-2.583 2.583c-.276.715-.453-1.502-.503 2.612C2.01 9.148 2 9.525 2 12s.01 2.852.059 3.958c.05 1.11.227 1.897.503 2.612a6.897 6.897 0 002.583 2.583c.715.276 1.502.453 2.612.503C9.148 21.99 9.525 22 12 22s2.852-.01 3.958-.059c1.11-.05 1.897-.227 2.612-.503a6.897 6.897 0 002.583-2.583c.276-.715.453-1.502-.503-2.612.049-1.106.059-1.483.059-3.958s-.01-2.852-.059-3.958c-.05-1.11-.227-1.897-.503-2.612a6.897 6.897 0 00-2.583-2.583c-.715-.276-1.502-.453-2.612-.503C14.852 2.01 14.475 2 12 2h.001zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+            <p class="text-sm">&copy; 2024 Komo Sushi Buffet. A Coruña.</p>
+        </div>
+    </footer>
+
+<script>
+    // Script para menú móvil
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Script para cambiar el header al hacer scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('bg-dark-bg/90', 'backdrop-blur-sm', 'shadow-lg');
+            header.classList.remove('bg-transparent');
+        } else {
+            header.classList.remove('bg-dark-bg/90', 'backdrop-blur-sm', 'shadow-lg');
+            header.classList.add('bg-transparent');
+        }
+    });
+
+    // Script para animaciones de entrada al hacer scroll
+    const sections = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                entry.target.style.animation = `fadeIn 1s ease-out forwards`;
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>
