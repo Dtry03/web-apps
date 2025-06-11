@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante FU 福 - Comida China Tradicional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-bg: #1a1a1a;
+            --primary-red: #c00000; /* Un rojo tradicional, como laca */
+            --accent-gold: #d4af37;
+            --text-light: #f1f1f1;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-bg {
+             background-image: linear-gradient(to top, rgba(26, 26, 26, 1) 10%, rgba(26, 26, 26, 0.4) 100%), url('https://placehold.co/1920x1080/1a1a1a/c00000?text=Pato+Pekín');
+             background-size: cover;
+             background-position: center;
+        }
+        .bg-primary { background-color: var(--primary-red); }
+        .text-primary { color: var(--primary-red); }
+        .text-accent-gold { color: var(--accent-gold); }
+        .border-accent-gold { border-color: var(--accent-gold); }
+        
+        .btn-primary {
+            background-color: var(--primary-red);
+            color: white;
+            transition: all 0.3s ease;
+            font-weight: 700;
+        }
+        .btn-primary:hover {
+            background-color: #a00000;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(192, 0, 0, 0.5);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-red);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 1s ease-out, transform 0.7s ease-out;
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-dark-bg">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-serif text-white" id="logo">FU 福</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#tradicion" class="text-gray-300 hover:text-white transition-colors duration-300 font-semibold text-sm tracking-wider">TRADICIÓN</a>
+                <a href="#especialidades" class="text-gray-300 hover:text-white transition-colors duration-300 font-semibold text-sm tracking-wider">ESPECIALIDADES</a>
+                <a href="https://wa.me/34624632120" target="_blank" class="btn-primary px-6 py-2 rounded-sm font-bold shadow-md text-sm">PEDIR POR WHATSAPP</a>
+            </nav>
+            <div class="md:hidden">
+                 <button id="menu-btn" class="text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                 </button>
+            </div>
+        </div>
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-bg/95 backdrop-blur-sm">
+            <a href="#tradicion" class="block text-center py-4 px-4 text-white hover:bg-gray-800 font-semibold tracking-wider">TRADICIÓN</a>
+            <a href="#especialidades" class="block text-center py-4 px-4 text-white hover:bg-gray-800 font-semibold tracking-wider">ESPECIALIDADES</a>
+            <a href="https://wa.me/34624632120" target="_blank" class="block text-center py-4 px-4 bg-primary text-white font-bold tracking-wider">PEDIR POR WHATSAPP</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="h-screen w-full flex items-center justify-center text-center text-white hero-bg">
+        <div class="max-w-4xl px-4 animate-on-scroll is-visible">
+            <h1 class="text-5xl md:text-7xl font-serif">El Auténtico Sabor de la Cocina China Tradicional</h1>
+            <p class="mt-4 text-lg md:text-xl font-light text-gray-300">Disfrute de los platos que han hecho grande a nuestra gastronomía.</p>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 lg:px-12">
+
+        <!-- Sección Tradición -->
+        <section id="tradicion" class="py-20 md:py-32 grid md:grid-cols-2 gap-16 items-center animate-on-scroll">
+            <div class="pr-0 md:pr-10">
+                <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Un Viaje a los Sabores de <span class="text-primary">China</span></h2>
+                <p class="text-lg text-gray-400 mb-4 leading-relaxed">
+                   En Restaurante FU (福), que significa "fortuna" o "buena suerte", nuestra misión es ofrecer una experiencia culinaria genuina. Nos alejamos de los tópicos para traer a su mesa los verdaderos platos de la cocina tradicional china.
+                </p>
+                <p class="text-lg text-gray-400 leading-relaxed">
+                   Utilizamos ingredientes frescos y técnicas milenarias para elaborar cada plato con el máximo respeto por la receta original.
+                </p>
+            </div>
+             <div>
+                <img src="https://placehold.co/600x700/1a1a1a/c00000?text=Restaurante+FU" alt="Detalle decorativo del Restaurante FU" class="w-full h-auto object-cover shadow-2xl rounded-lg">
+            </div>
+        </section>
+
+        <!-- Sección Especialidades -->
+        <section id="especialidades" class="py-20 md:py-28 border-t border-gray-800">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-serif text-white mb-4">Nuestras <span class="text-primary">Especialidades</span></h2>
+                <p class="max-w-3xl mx-auto text-lg text-gray-400 leading-relaxed">Descubra los platos que nos hacen únicos.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Plato 1 -->
+                <div class="bg-[#2a2a2a] p-6 shadow-2xl transition-all duration-300 card-hover border-b-4 border-transparent animate-on-scroll">
+                    <img src="https://placehold.co/500x400/c00000/ffffff?text=Pato+Pekín" alt="Pato Pekín" class="w-full h-56 object-cover mb-5 rounded-md">
+                    <h3 class="text-2xl font-serif text-white">Pato Pekín</h3>
+                    <p class="text-gray-400 mt-2">Nuestra joya. Piel crujiente y carne jugosa, servido con crepes finas y su salsa.</p>
+                </div>
+                <!-- Plato 2 -->
+                <div class="bg-[#2a2a2a] p-6 shadow-2xl transition-all duration-300 card-hover border-b-4 border-transparent animate-on-scroll" style="transition-delay: 200ms;">
+                    <img src="https://placehold.co/500x400/d4af37/1a1a1a?text=Dim+Sum" alt="Dim Sum" class="w-full h-56 object-cover mb-5 rounded-md">
+                    <h3 class="text-2xl font-serif text-white">Dim Sum Artesanal</h3>
+                    <p class="text-gray-400 mt-2">Hechos a mano cada día. Descubra nuestros rellenos de gambas, cerdo o vegetales.</p>
+                </div>
+                <!-- Plato 3 -->
+                <div class="bg-[#2a2a2a] p-6 shadow-2xl transition-all duration-300 card-hover border-b-4 border-transparent animate-on-scroll" style="transition-delay: 400ms;">
+                     <img src="https://placehold.co/500x400/c00000/ffffff?text=Mapo+Tofu" alt="Mapo Tofu" class="w-full h-56 object-cover mb-5 rounded-md">
+                    <h3 class="text-2xl font-serif text-white">Mapo Tofu (麻婆豆腐)</h3>
+                    <p class="text-gray-400 mt-2">Un clásico picante y aromático de la región de Sichuan, para los más atrevidos.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección Contacto y Pedidos -->
+        <section id="contacto" class="py-24 my-20 bg-primary animate-on-scroll">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-4xl md:text-5xl font-serif text-white mb-4">Pide por WhatsApp</h2>
+                 <p class="max-w-2xl mx-auto text-xl text-red-100 mb-8">
+                    Consulte nuestro menú digital y haga su pedido para recoger o a domicilio a través de WhatsApp. ¡Fácil y rápido!
+                 </p>
+                 <a href="https://wa.me/34624632120" target="_blank" class="inline-block bg-white text-primary font-bold hover:bg-gray-200 transition-colors duration-300 px-12 py-4 text-lg tracking-wider rounded-md shadow-lg">
+                    HACER PEDIDO
+                </a>
+                 <div class="mt-8 font-semibold text-red-200">
+                    <p>📍 Rúa Torreiro 3, 15003 A Coruña</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.instagram.com/fu.acoruna" target="_blank" class="text-gray-500 hover:text-white transition-colors duration-300">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.153 2.153c.247.636.398 1.363.445 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.047 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.153 2.153c-.636.247-1.363.398-2.427.445-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.153-2.153c-.247-.636-.398-1.363-.445-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.047-1.064.218-1.791.465-2.427a4.902 4.902 0 012.153-2.153c.636-.247 1.363.398 2.427.445 1.024-.048 1.378.06 3.808-.06zM12 0C9.525 0 9.148.01 8.042.059c-1.11.05-1.897.227-2.612.503a6.897 6.897 0 00-2.583 2.583c-.276.715-.453-1.502-.503 2.612C2.01 9.148 2 9.525 2 12s.01 2.852.059 3.958c.05 1.11.227 1.897.503 2.612a6.897 6.897 0 002.583 2.583c.715.276 1.502.453 2.612.503C9.148 21.99 9.525 22 12 22s2.852-.01 3.958-.059c1.11-.05 1.897-.227 2.612-.503a6.897 6.897 0 002.583-2.583c.276-.715.453-1.502-.503-2.612.049-1.106.059-1.483.059-3.958s-.01-2.852-.059-3.958c-.05-1.11-.227-1.897-.503-2.612a6.897 6.897 0 00-2.583-2.583c-.715-.276-1.502-.453-2.612-.503C14.852 2.01 14.475 2 12 2h.001zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+            <p class="text-sm">&copy; 2024 Restaurante FU 福. A Coruña.</p>
+        </div>
+    </footer>
+
+<script>
+    // Script para menú móvil
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Script para cambiar el header al hacer scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('bg-dark-bg/90', 'backdrop-blur-sm', 'shadow-lg');
+            header.classList.remove('bg-transparent');
+        } else {
+            header.classList.remove('bg-dark-bg/90', 'backdrop-blur-sm', 'shadow-lg');
+            header.classList.add('bg-transparent');
+        }
+    });
+
+    // Script para animaciones de entrada al hacer scroll
+    const sections = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                entry.target.style.animation = `fadeIn 1s ease-out forwards`;
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>
