@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAKONTENTO | Taquería Fusión en A Coruña</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-bg: #111827; /* Un gris casi negro */
+            --accent-yellow: #facc15; /* yellow-400 */
+            --accent-pink: #ec4899; /* pink-500 */
+            --accent-cyan: #22d3ee; /* cyan-400 */
+            --light-text: #f9fafb; /* gray-50 */
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+        }
+        h1, h2, h3, .font-display {
+            font-family: 'Anton', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .hero-bg {
+             background-image: linear-gradient(to top, rgba(17, 24, 39, 1) 25%, rgba(17, 24, 39, 0.3) 100%), url('https://placehold.co/1920x1080/111827/facc15?text=TACOS');
+             background-size: cover;
+             background-position: center;
+        }
+        .text-yellow { color: var(--accent-yellow); }
+        .text-pink { color: var(--accent-pink); }
+        .text-cyan { color: var(--accent-cyan); }
+        
+        .btn-accent {
+            background-color: var(--accent-yellow);
+            color: var(--dark-bg);
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        .btn-accent:hover {
+            background-color: #fde047; /* yellow-300 */
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(250, 204, 21, 0.4);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+        }
+        .clip-path-angled {
+            clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 1s ease-out, transform 0.6s ease-out;
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-dark-bg">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-display text-white" id="logo">TAKONTENTO</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#concepto" class="text-gray-300 hover:text-white transition-colors duration-300 font-semibold text-sm tracking-wider">CONCEPTO</a>
+                <a href="#carta" class="text-gray-300 hover:text-white transition-colors duration-300 font-semibold text-sm tracking-wider">CARTA</a>
+                <a href="#locales" class="btn-accent px-6 py-2 rounded-full font-bold shadow-md text-sm">NUESTROS LOCALES</a>
+            </nav>
+            <div class="md:hidden">
+                 <button id="menu-btn" class="text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                 </button>
+            </div>
+        </div>
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-bg/95 backdrop-blur-sm">
+            <a href="#concepto" class="block text-center py-4 px-4 text-white hover:bg-gray-800 font-semibold tracking-wider">CONCEPTO</a>
+            <a href="#carta" class="block text-center py-4 px-4 text-white hover:bg-gray-800 font-semibold tracking-wider">CARTA</a>
+            <a href="#locales" class="block text-center py-4 px-4 bg-accent-yellow text-dark-bg font-bold tracking-wider">NUESTROS LOCALES</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="h-screen w-full flex items-center justify-center text-center text-white hero-bg">
+        <div class="max-w-4xl px-4 animate-on-scroll is-visible">
+            <h1 class="text-6xl md:text-9xl font-display">FUSIÓN QUE TE PONE <span class="text-yellow">KONTENTO</span></h1>
+            <p class="mt-4 text-lg md:text-xl font-light text-gray-300">Tacos, cócteles y buen rollo en el corazón de A Coruña.</p>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 lg:px-12">
+
+        <!-- Sección Concepto -->
+        <section id="concepto" class="py-20 md:py-32 grid md:grid-cols-2 gap-16 items-center animate-on-scroll">
+            <div class="pr-0 md:pr-10">
+                <h2 class="text-4xl md:text-6xl font-display text-white mb-6">NO SOMOS SOLO <span class="text-pink">TACOS</span></h2>
+                <p class="text-lg text-gray-300 mb-4 leading-relaxed">
+                   Somos una explosión de sabor que fusiona lo mejor de la cocina mexicana con toques atrevidos del mundo. Una taquería para gente que no se conforma.
+                </p>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                   Ingredientes frescos, recetas originales y un ambiente único para que siempre te vayas <span class="text-yellow font-bold">TAKONTENTO</span>.
+                </p>
+            </div>
+             <div>
+                <img src="https://placehold.co/600x700/111827/ec4899?text=Ambiente+Takontento" alt="Ambiente del restaurante Takontento" class="w-full h-auto object-cover shadow-2xl rounded-lg">
+            </div>
+        </section>
+
+        <!-- Sección Carta -->
+        <section id="carta" class="py-20 md:py-28 border-t border-gray-800">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl md:text-6xl font-display text-white mb-4">PURA <span class="text-cyan">TENTACIÓN</span></h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="https://placehold.co/500x500/facc15/111827?text=TACOS+1" alt="Tacos" class="rounded-lg shadow-lg w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+                <img src="https://placehold.co/500x700/ec4899/111827?text=TACOS+2" alt="Tacos" class="rounded-lg shadow-lg w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+                <img src="https://placehold.co/500x500/22d3ee/111827?text=TACOS+3" alt="Tacos" class="rounded-lg shadow-lg w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+                <img src="https://placehold.co/500x700/facc15/111827?text=CÓCTELES" alt="Cóctel" class="rounded-lg shadow-lg w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+            </div>
+        </section>
+        
+        <!-- Sección Locales -->
+        <section id="locales" class="py-24 my-20 animate-on-scroll">
+            <div class="text-center max-w-4xl mx-auto px-6">
+                <h2 class="text-4xl md:text-6xl font-display text-white mb-8">Encuentra tu <span class="text-yellow">Takontento</span> más cercano</h2>
+                <div class="grid md:grid-cols-2 gap-8 text-white">
+                    <!-- Local 1 -->
+                    <div class="bg-[#1f2937] p-6 rounded-lg text-center transition-transform duration-300 card-hover">
+                        <h3 class="text-2xl font-display text-pink">Estrella</h3>
+                        <p class="text-gray-400 mt-2">Calle Estrella, 34<br>A Coruña</p>
+                    </div>
+                    <!-- Local 2 -->
+                    <div class="bg-[#1f2937] p-6 rounded-lg text-center transition-transform duration-300 card-hover">
+                        <h3 class="text-2xl font-display text-cyan">Capitán Juan Varela</h3>
+                        <p class="text-gray-400 mt-2">Calle Capitán Juan Varela, 38<br>A Coruña</p>
+                    </div>
+                     <!-- Local 3 -->
+                    <div class="bg-[#1f2937] p-6 rounded-lg text-center transition-transform duration-300 card-hover">
+                        <h3 class="text-2xl font-display text-yellow">Primavera</h3>
+                        <p class="text-gray-400 mt-2">Calle Primavera, 18<br>A Coruña</p>
+                    </div>
+                     <!-- Local 4 -->
+                    <div class="bg-[#1f2937] p-6 rounded-lg text-center transition-transform duration-300 card-hover">
+                        <h3 class="text-2xl font-display text-pink">Cambre</h3>
+                        <p class="text-gray-400 mt-2">Calle Emilia Pardo Bazán, 1<br>Cambre</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.instagram.com/takontento_" target="_blank" class="text-gray-500 hover:text-white transition-colors duration-300">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.153 2.153c.247.636.398 1.363.445 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.047 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.153 2.153c-.636.247-1.363.398-2.427.445-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.153-2.153c-.247-.636-.398-1.363-.445-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.047-1.064.218-1.791.465-2.427a4.902 4.902 0 012.153-2.153c.636-.247 1.363.398 2.427.445 1.024-.048 1.378.06 3.808-.06zM12 0C9.525 0 9.148.01 8.042.059c-1.11.05-1.897.227-2.612.503a6.897 6.897 0 00-2.583 2.583c-.276.715-.453-1.502-.503 2.612C2.01 9.148 2 9.525 2 12s.01 2.852.059 3.958c.05 1.11.227 1.897.503 2.612a6.897 6.897 0 002.583 2.583c.715.276 1.502.453 2.612.503C9.148 21.99 9.525 22 12 22s2.852-.01 3.958-.059c1.11-.05 1.897-.227 2.612-.503a6.897 6.897 0 002.583-2.583c.276-.715.453-1.502-.503-2.612.049-1.106.059-1.483.059-3.958s-.01-2.852-.059-3.958c-.05-1.11-.227-1.897-.503-2.612a6.897 6.897 0 00-2.583-2.583c-.715-.276-1.502-.453-2.612-.503C14.852 2.01 14.475 2 12 2h.001zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+            <p class="text-sm">&copy; 2024 TAKONTENTO. A Coruña.</p>
+        </div>
+    </footer>
+
+<script>
+    // Script para menú móvil
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Script para cambiar el header al hacer scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('bg-dark-bg/90', 'backdrop-blur-sm', 'shadow-lg');
+            header.classList.remove('bg-transparent');
+        } else {
+            header.classList.remove('bg-dark-bg/90', 'backdrop-blur-sm', 'shadow-lg');
+            header.classList.add('bg-transparent');
+        }
+    });
+
+    // Script para animaciones de entrada al hacer scroll
+    const sections = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                entry.target.style.animation = `fadeIn 1s ease-out forwards`;
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>
